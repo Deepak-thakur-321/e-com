@@ -90,7 +90,7 @@ const ShopBetter = () => {
    ];
 
    return (
-      <section className="py-10   relative overflow-hidden">
+      <section className="py-10 relative overflow-hidden">
          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="flex flex-col sm:flex-row items-center justify-between mb-10 gap-6">
