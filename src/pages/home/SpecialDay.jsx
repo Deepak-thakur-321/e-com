@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Star, ShoppingBag, Heart, ChevronRight } from 'lucide-react';
 
 const BrandCollaborationSection = () => {
-   
-
    return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-10 px-4 sm:px-6 lg:px-8">
          <div className="max-w-9xl">
