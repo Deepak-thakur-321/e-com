@@ -6,29 +6,45 @@ const SpecialDay = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-6 px-4 sm:px-6 lg:px-8">
          <div className="max-w-9xl">
             {/* Header Section */}
-            <div className="max-w-2xl mx-aut mb-10">
-               <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-800 text-xs font-semibold tracking-wide rounded-full mb-4">
-                  SPECIAL EDITION
-               </span>
-               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3">
-                  Brand Collaborations
-               </h1>
-               <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                  Exclusive partnerships between iconic brands and visionary creators —
-                  limited drops, lasting impressions.
-               </p>
+            <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-8">
+               {/* Left Content */}
+               <div className="max-w-4xl text-left">
+                  <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-800 text-xs font-semibold tracking-wide rounded-xl mb-4">
+                     VISUAL COLLECTION
+                  </span>
+
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 leading-tight">
+                     A Gallery of <span className="text-blue-600">Modern Aesthetics</span>
+                  </h1>
+
+                  <p className="lg:hidden md:hidden block text-base md:text-lg text-slate-600 leading-relaxed mb-0 md:mb-0 lg:max-w-xl">
+                     Explore a curated showcase of style and creativity — each frame tells a story of
+                     craftsmanship, innovation, and individuality. Discover how art and commerce merge
+                     seamlessly in our visual collection.
+                  </p>
+               </div>
+
+               {/* Right CTA Buttons */}
+               <div className="flex sm:flex-row items-center gap-4 shrink-0">
+                  <button className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-all duration-300">
+                     Explore Gallery
+                  </button>
+                  <button className="px-6 py-3 border border-slate-900 text-slate-900 font-semibold rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300">
+                     Learn More
+                  </button>
+               </div>
             </div>
 
 
             {/* Featured Banner */}
-            <div className="flex flex-col md:flex-row gap-6 mb-16 h-[130vh]">
+            <div className="flex flex-col md:flex-row gap-6 mb-7 h-[130vh]">
                {/* === LEFT CONTENT + COLLAGE === */}
                <div className="relative flex-1 rounded-3xl bg-gray-900 p-4 md:p-6  overflow-hidden flex flex-col">
                   {/* Text Content */}
                   <div className="relative mb-4">
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 drop-shadow-lg">
+                     <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                         Curated Excellence
-                     </h2>
+                     </p>
 
                      <p className="text-white text-sm sm:text-base md:text-base mb-4 max-w-full md:max-w-lg drop-shadow-md">
                         Each collaboration is meticulously crafted, merging heritage craftsmanship
