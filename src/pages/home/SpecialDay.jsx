@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, ShoppingBag, Heart, ChevronRight } from 'lucide-react';
 
-const BrandCollaborationSection = () => {
+const SpecialDay = () => {
    return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-6 px-4 sm:px-6 lg:px-8">
          <div className="max-w-9xl">
@@ -81,7 +81,7 @@ const BrandCollaborationSection = () => {
                      className="w-full h-full object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                   />
                   <img
-                     src="https://i.pinimg.com/736x/a3/8e/8f/a38e8fce0fe995dab722c5f1ead17f68.jpg"
+                     src="https://i.pinimg.com/1200x/98/a9/9f/98a99f1ac451540d0593243dfd977fdf.jpg"
                      alt="Collab 3"
                      className="w-full h-full object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                   />
@@ -97,4 +97,4 @@ const BrandCollaborationSection = () => {
    );
 };
 
-export default BrandCollaborationSection;
+export default SpecialDay;
