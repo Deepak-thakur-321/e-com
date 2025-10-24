@@ -18,7 +18,7 @@ export default function PremiumNavbar() {
    ];
 
    return (
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
+      <nav className="border-b border-gray-200 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
          {/* Top Bar */}
          <div className="border-b border-gray-100 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-gray-600">

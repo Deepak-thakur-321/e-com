@@ -20,7 +20,7 @@ const CollaborationSection = () => {
          brand: "Label Ritu Kumar × Global Desi",
          price: 6499,
          originalPrice: 8999,
-         image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
+         image: "https://i.pinimg.com/736x/f3/80/72/f38072ef708889bc2c13f4bfd8acd1f1.jpg",
          badge: "Limited Edition",
          rating: 4.8,
          reviews: 284
@@ -32,7 +32,7 @@ const CollaborationSection = () => {
          brand: "Fastrack × Titan Luxe",
          price: 7299,
          originalPrice: 9499,
-         image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=500&q=80",
+         image: "https://i.pinimg.com/736x/eb/7b/25/eb7b25805c1a6847dd0e867150d2b5e9.jpg",
          badge: "Exclusive",
          rating: 4.8,
          reviews: 198
@@ -43,7 +43,7 @@ const CollaborationSection = () => {
          brand: "FabIndia × Raw Mango",
          price: 4299,
          originalPrice: 5999,
-         image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80",
+         image: "https://i.pinimg.com/1200x/d8/20/68/d8206835e100174a6affd66aa0c52f34.jpg",
          badge: "Artisan Collab",
          rating: 4.6,
          reviews: 265
@@ -54,7 +54,7 @@ const CollaborationSection = () => {
          brand: "Bewakoof × Urban Tribe",
          price: 2499,
          originalPrice: 3299,
-         image: "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=500&q=80",
+         image: "https://i.pinimg.com/736x/9d/2d/63/9d2d63546fabc1e4f4ffa5ca190fb869.jpg",
          badge: "New Drop",
          rating: 4.8,
          reviews: 421
@@ -65,7 +65,7 @@ const CollaborationSection = () => {
          brand: "The Souled Store × Ray-Ban India",
          price: 4999,
          originalPrice: 6999,
-         image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80",
+         image: "https://i.pinimg.com/736x/34/83/b3/3483b3cf929def8326075ba1dc6b8f97.jpg",
          badge: "Signature Collab",
          rating: 4.9,
          reviews: 167
@@ -76,7 +76,8 @@ const CollaborationSection = () => {
          brand: "Manyavar × Sabyasachi",
          price: 11999,
          originalPrice: 14999,
-         image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80",
+         image: "https://i.pinimg.com/474x/18/d6/6b/18d66b7202d380afc46e5b3a963413ba.jpg",
+         
          badge: "Luxury Edit",
          rating: 5.0,
          reviews: 246
@@ -87,7 +88,7 @@ const CollaborationSection = () => {
          brand: "Lavie × Global Desi",
          price: 3999,
          originalPrice: 5499,
-         image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80",
+         image: "https://i.pinimg.com/1200x/1c/3a/ae/1c3aae41b8d49b366546a60fe966d4a9.jpg",
          badge: "Designer Pick",
          rating: 4.5,
          reviews: 194
@@ -98,11 +99,55 @@ const CollaborationSection = () => {
          brand: "boAt × House of Masaba",
          price: 6999,
          originalPrice: 8999,
-         image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80",
+         image: "https://i.pinimg.com/736x/15/60/71/1560718dca9bbcfd6fdbd09dcc0f2fc1.jpg",
          badge: "Style Collab",
          rating: 4.9,
          reviews: 288
-      }
+      },
+      {
+         id: 9,
+         name: "Amber Rhythm Headphones",
+         brand: "boAt × House of Masaba",
+         price: 6999,
+         originalPrice: 8999,
+         image: "https://i.pinimg.com/736x/93/dc/e0/93dce081b85f8058ad2c6b6406a5a8b1.jpg",
+         badge: "Style Collab",
+         rating: 4.9,
+         reviews: 288
+      },
+      {
+         id: 10,
+         name: "Amber Rhythm Headphones",
+         brand: "boAt × House of Masaba",
+         price: 6999,
+         originalPrice: 8999,
+         image: "https://i.pinimg.com/736x/ec/5f/54/ec5f541bc23318353c411dd10bc6e5f2.jpg",
+         badge: "Style Collab",
+         rating: 4.9,
+         reviews: 288
+      },
+      {
+         id: 11,
+         name: "Amber Rhythm Headphones",
+         brand: "boAt × House of Masaba",
+         price: 6999,
+         originalPrice: 8999,
+         image: "https://i.pinimg.com/1200x/7c/3f/60/7c3f6069104cc1d4bffc34da56e69bb8.jpg",
+         badge: "Style Collab",
+         rating: 4.9,
+         reviews: 288
+      },
+      {
+         id: 12,
+         name: "Amber Rhythm Headphones",
+         brand: "boAt × House of Masaba",
+         price: 6999,
+         originalPrice: 8999,
+         image: "https://i.pinimg.com/1200x/c2/ae/d6/c2aed63a65e0627a2ffaa30df75e9d49.jpg",
+         badge: "Style Collab",
+         rating: 4.9,
+         reviews: 288
+      },
    ];
 
    return (
@@ -124,11 +169,7 @@ const CollaborationSection = () => {
                            alt={product.name}
                            className="w-full h-full object-cover transition-transform duration-700 transform group-hover:scale-110"
                         />
-                        <div className="absolute top-4 left-4">
-                           <span className="bg-gradient-to-r from-blue-900 to-indigo-700 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
-                              {product.badge}
-                           </span>
-                        </div>
+                        
                         <button
                            onClick={() => toggleFavorite(product.id)}
                            className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
@@ -139,18 +180,7 @@ const CollaborationSection = () => {
                                  : "text-slate-400"
                                  }`}
                            />
-                        </button>
-
-                        {/* Hover Overlay */}
-                        <div
-                           className={`absolute inset-0 bg-gradient-to-br from-blue-900/90 to-indigo-900/90 flex items-center justify-center transition-opacity duration-300 ${hoveredProduct === product.id ? "opacity-100" : "opacity-0 pointer-events-none"
-                              }`}
-                        >
-                           <button className="bg-white text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
-                              <ShoppingBag className="w-4 h-4" />
-                              Quick Add
-                           </button>
-                        </div>
+                        </button>                        
                      </div>
 
                      {/* Product Info */}

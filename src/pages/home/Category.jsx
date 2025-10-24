@@ -22,7 +22,7 @@ const categories = [
 
 const Category = () => {
    return (
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-9xl mx-auto px-6 py-12">
          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-8">
             {categories.map((category, index) => (
                <div

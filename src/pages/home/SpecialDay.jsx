@@ -3,46 +3,45 @@ import { Star, ShoppingBag, Heart, ChevronRight } from 'lucide-react';
 
 const BrandCollaborationSection = () => {
    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-6 px-4 sm:px-6 lg:px-8">
          <div className="max-w-9xl">
             {/* Header Section */}
-            <div className="text-center mb-16 relative">
-               <div className="relative">
-                  <span className="inline-block px-6 py-2 bg-blue-900 text-white text-sm font-semibold tracking-wider rounded-full mb-6">
-                     SPECIAL EDITION
-                  </span>
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-blue-900 mb-6 tracking-tight">
-                     Brand Collaborations
-                  </h1>
-                  <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                     Exclusive partnerships bringing together iconic brands and visionary creators.
-                     Limited quantities, infinite style.
-                  </p>
-               </div>
+            <div className="max-w-2xl mx-aut mb-10">
+               <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-800 text-xs font-semibold tracking-wide rounded-full mb-4">
+                  SPECIAL EDITION
+               </span>
+               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3">
+                  Brand Collaborations
+               </h1>
+               <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                  Exclusive partnerships between iconic brands and visionary creators —
+                  limited drops, lasting impressions.
+               </p>
             </div>
+
 
             {/* Featured Banner */}
             <div className="flex flex-col md:flex-row gap-6 mb-16 h-[130vh]">
                {/* === LEFT CONTENT + COLLAGE === */}
-               <div className="relative flex-1 rounded-3xl  bg-gray-900 p-4 md:p-6 shadow-2xl overflow-hidden flex flex-col">
-                  {/* Background overlays */}
-                  <div className="absolute inset-0 bg-gray-800 opacity-20"></div>
-                  <div className="absolute top-0 right-0 w-60 h-60 md:w-80 md:h-80 bg-white rounded-full blur-3xl opacity-10 transform translate-x-1/3 -translate-y-1/3"></div>
-
+               <div className="relative flex-1 rounded-3xl bg-gray-900 p-4 md:p-6  overflow-hidden flex flex-col">
                   {/* Text Content */}
-                  <div className="relative z-10 mb-4">
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-100 mb-3">
+                  <div className="relative mb-4">
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 drop-shadow-lg">
                         Curated Excellence
                      </h2>
-                     <p className="text-gray-300 text-sm sm:text-base md:text-base mb-4 max-w-full md:max-w-lg">
+
+                     <p className="text-white text-sm sm:text-base md:text-base mb-4 max-w-full md:max-w-lg drop-shadow-md">
                         Each collaboration is meticulously crafted, merging heritage craftsmanship
                         with contemporary innovation. Experience the extraordinary.
                      </p>
+
                      <button className="bg-white text-gray-900 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow flex items-center gap-2">
                         Explore Collection
                         <ChevronRight className="w-4 h-4" />
                      </button>
                   </div>
+
+
 
                   {/* Left-side Pinterest-style collage */}
                   <div className="relative z-10 flex-1 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-2 auto-rows-fr overflow-hidden">

@@ -41,7 +41,7 @@ export default function PremiumHero() {
                      <div className="relative grid lg:grid-cols-2 h-full">
 
                         {/* Text Content */}
-                        <div className="flex flex-col justify-center p-8 lg:p-12 z-10 space-y-5 animate-fadeIn">
+                        <div className="flex flex-col p-8 lg:p-12 z-10 space-y-5 animate-fadeIn">
                            {/* Badge */}
                            <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-white/40 rounded-full px-4 py-1.5 w-fit">
                               <span className="flex items-center gap-1 text-yellow-500 text-xs font-semibold">
@@ -74,6 +74,23 @@ export default function PremiumHero() {
                                  View Collection
                               </button>
                            </div>
+
+                           <div className="grid grid-cols-3 gap-4 pb-5 w-full mt-6 animate-fadeIn delay-400">
+                              <div className="text-center">
+                                 <div className="text-2xl font-bold text-gray-900">10K+</div>
+                                 <div className="text-sm text-gray-500">Happy Customers</div>
+                              </div>
+                              <div className="text-center">
+                                 <div className="text-2xl font-bold text-gray-900">5K+</div>
+                                 <div className="text-sm text-gray-500">Products</div>
+                              </div>
+                              <div className="text-center">
+                                 <div className="text-2xl font-bold text-gray-900">24/7</div>
+                                 <div className="text-sm text-gray-500">Support</div>
+                              </div>
+                           </div>
+
+
                         </div>
 
                         {/* Hero Image Carousel */}
@@ -92,20 +109,7 @@ export default function PremiumHero() {
                            </div>
 
                            {/* Stats Section */}
-                           <div className="grid grid-cols-3 gap-4 pb-5 w-full mt-4 animate-fadeIn delay-400">
-                              <div className="text-center">
-                                 <div className="text-2xl font-bold text-gray-900">500K+</div>
-                                 <div className="text-sm text-gray-500">Happy Customers</div>
-                              </div>
-                              <div className="text-center">
-                                 <div className="text-2xl font-bold text-gray-900">50K+</div>
-                                 <div className="text-sm text-gray-500">Products</div>
-                              </div>
-                              <div className="text-center">
-                                 <div className="text-2xl font-bold text-gray-900">24/7</div>
-                                 <div className="text-sm text-gray-500">Support</div>
-                              </div>
-                           </div>
+
                         </div>
 
                      </div>
