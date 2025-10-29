@@ -1,7 +1,8 @@
+// src/app/features/products/productSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   products: [
+   items: [
       {
          id: 1,
          name: "Crimson Aura Draped Dress",
