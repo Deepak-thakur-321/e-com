@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
-import { FaShoppingCart, FaHeart, FaUser, FaSearch, FaChevronDown } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaShoppingCart, FaHeart, FaUser, FaSearch, FaChevronDown } from "react-icons/fa";
+import { useSelector } from "react-redux"; // ✅ import this
 
-export default function PremiumNavbar() {
+export default function Navbar() {
    const [isSearchFocused, setIsSearchFocused] = useState(false);
    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-   const cartCount = 3; // Replace with your Redux selector
+
+   // ✅ use Redux selector to get totalQuantity
+   const cartCount = useSelector((state) => state.cart.totalQuantity); // <-- this line replaces const cartCount = 3;
 
    const categories = [
-      'Electronics',
-      'Fashion',
-      'Home & Living',
-      'Beauty & Health',
-      'Sports & Outdoors',
-      'Books & Media',
-      'Toys & Games',
-      'Automotive'
+      "Electronics",
+      "Fashion",
+      "Home & Living",
+      "Beauty & Health",
+      "Sports & Outdoors",
+      "Books & Media",
+      "Toys & Games",
+      "Automotive",
    ];
 
    return (
@@ -52,7 +55,10 @@ export default function PremiumNavbar() {
                         className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition py-2"
                      >
                         <span>Categories</span>
-                        <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isCategoryOpen ? 'rotate-180' : ''}`} />
+                        <FaChevronDown
+                           className={`w-3 h-3 transition-transform duration-200 ${isCategoryOpen ? "rotate-180" : ""
+                              }`}
+                        />
                      </button>
 
                      {isCategoryOpen && (
@@ -76,13 +82,22 @@ export default function PremiumNavbar() {
 
                   {/* Nav Links */}
                   <div className="hidden lg:flex items-center space-x-8">
-                     <a href="/" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition">
+                     <a
+                        href="/"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+                     >
                         New Arrivals
                      </a>
-                     <a href="/shop" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition">
+                     <a
+                        href="/shop"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+                     >
                         Best Sellers
                      </a>
-                     <a href="/showcase" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition">
+                     <a
+                        href="/showcase"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+                     >
                         Sale
                      </a>
                   </div>
@@ -90,7 +105,10 @@ export default function PremiumNavbar() {
 
                {/* Search Bar */}
                <div className="hidden md:flex items-center flex-1 max-w-xl mx-8">
-                  <div className={`relative w-full transition-all duration-300 ${isSearchFocused ? 'scale-105' : ''}`}>
+                  <div
+                     className={`relative w-full transition-all duration-300 ${isSearchFocused ? "scale-105" : ""
+                        }`}
+                  >
                      <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                      <input
                         type="text"
@@ -98,8 +116,8 @@ export default function PremiumNavbar() {
                         onFocus={() => setIsSearchFocused(true)}
                         onBlur={() => setIsSearchFocused(false)}
                         className={`w-full pl-11 pr-4 py-2.5 bg-gray-50 border rounded-full text-sm focus:outline-none transition-all duration-300 ${isSearchFocused
-                              ? 'border-gray-900 bg-white shadow-lg'
-                              : 'border-gray-200 hover:bg-gray-100'
+                           ? "border-gray-900 bg-white shadow-lg"
+                           : "border-gray-200 hover:bg-gray-100"
                            }`}
                      />
                   </div>
@@ -133,18 +151,6 @@ export default function PremiumNavbar() {
                      </div>
                   </a>
                </div>
-            </div>
-         </div>
-
-         {/* Mobile Search */}
-         <div className="md:hidden px-6 pb-3">
-            <div className="relative">
-               <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-               <input
-                  type="text"
-                  placeholder="Search products..."
-                  className="w-full pl-11 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-gray-900 focus:bg-white transition"
-               />
             </div>
          </div>
       </nav>

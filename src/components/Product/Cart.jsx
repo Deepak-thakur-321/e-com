@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-   addItem,
-   removeItem,
-   decrementItem,
-   clearCart,
-} from "../../app/features/cart/cartSlice"; // ✅ Make sure path & file name exactly match
+import { addItem, removeItem, decrementItem, clearCart } from "../../app/features/cart/cartSlice";
 import { FiTrash2, FiMinus, FiPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
    const navigate = useNavigate();
    const dispatch = useDispatch();
+
    const cartItems = useSelector((state) => state.cart.items || []);
+   // const state = useSelector((state) => state);
+
+   console.log("Cart Component Items:", cartItems);
+   // console.log("Full Redux State:", state);
+
+   useEffect(() => {
+      console.log("Cart re-rendered with items:", cartItems);
+   }, [cartItems]);
 
    // 🔹 Handlers
-   const handleIncrement = (product) => dispatch(addItem(product));
-   const handleDecrement = (product) => dispatch(decrementItem(product.id));
+   const handleIncrement = (item) => dispatch(addItem(item));
+   const handleDecrement = (id) => dispatch(decrementItem(id));
    const handleRemove = (id) => dispatch(removeItem(id));
 
    const handleCheckout = () => {
@@ -43,16 +47,16 @@ const Cart = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                {/* 🔹 Left Section — Product List */}
                <div className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 shadow-lg p-6 max-h-[70vh] overflow-y-auto">
-                  {cartItems.map((product) => (
+                  {cartItems.map((item) => (
                      <div
-                        key={product.id}
+                        key={item.id}
                         className="flex items-center justify-between gap-4 border-b border-gray-100 py-4 last:border-none"
                      >
                         {/* Product Image */}
                         <div className="w-24 h-24 flex-shrink-0">
                            <img
-                              src={product.image}
-                              alt={product.name}
+                              src={item.image}
+                              alt={item.name}
                               className="w-full h-full object-contain rounded-xl bg-gray-50"
                            />
                         </div>
@@ -60,28 +64,28 @@ const Cart = () => {
                         {/* Product Info */}
                         <div className="flex-1">
                            <h3 className="text-lg font-semibold text-gray-900">
-                              {product.name}
+                              {item.name}
                            </h3>
                            <p className="text-sm text-gray-500 mt-1">
-                              ₹{product.price}
+                              ₹{item.price}
                            </p>
 
                            {/* Quantity Controls */}
                            <div className="flex items-center mt-3 bg-gray-100 rounded-lg w-max">
                               <button
-                                 onClick={() => handleDecrement(product)}
-                                 disabled={product.quantity <= 1}
+                                 onClick={() => handleDecrement(item.id)}
+                                 disabled={item.quantity <= 1}
                                  className="p-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                               >
                                  <FiMinus className="w-4 h-4 text-gray-700" />
                               </button>
 
                               <span className="px-4 py-2 text-gray-900 font-semibold">
-                                 {product.quantity}
+                                 {item.quantity}
                               </span>
 
                               <button
-                                 onClick={() => handleIncrement(product)}
+                                 onClick={() => handleIncrement(item)}
                                  className="p-2 hover:bg-gray-200 transition-colors"
                               >
                                  <FiPlus className="w-4 h-4 text-gray-700" />
@@ -92,10 +96,10 @@ const Cart = () => {
                         {/* Price + Remove */}
                         <div className="flex flex-col items-end">
                            <p className="text-lg font-bold text-gray-900 mb-2">
-                              ₹{(product.price * product.quantity).toFixed(2)}
+                              ₹{(item.price * item.quantity).toFixed(2)}
                            </p>
                            <button
-                              onClick={() => handleRemove(product.id)}
+                              onClick={() => handleRemove(item.id)}
                               className="text-red-500 hover:text-red-700 hover:bg-red-50 p-2 rounded-lg transition-colors"
                            >
                               <FiTrash2 className="w-5 h-5" />

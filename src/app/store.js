@@ -1,13 +1,15 @@
-// src/app/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./features/cart/cartSlice";
-import productReducer from "./features/products/ProductsSlice";
+import productsReducer from "./features/products/ProductsSlice";
+
+
 
 const store = configureStore({
    reducer: {
-      cart: cartReducer,
-      products: productReducer,
+      cart: cartReducer,         // ✅ correct key name
+      products: productsReducer, // ✅ matches your useSelector
    },
 });
 
+console.log("STORE INITIALIZED:", store.getState());
 export default store;

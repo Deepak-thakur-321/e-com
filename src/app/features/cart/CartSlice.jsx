@@ -17,42 +17,77 @@ const cartSlice = createSlice({
          if (existing) {
             existing.quantity += 1;
          } else {
-            state.items.push({ ...product, quantity: 1 });
+            state.items.push({
+               ...product,
+               quantity: product.quantity ? product.quantity : 1,
+            });
          }
 
-         // update totals
-         state.totalQuantity = state.items.reduce((acc, item) => acc + item.quantity, 0);
-         state.totalAmount = state.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+         // ✅ Recalculate totals in one pass
+         let totalQ = 0;
+         let totalA = 0;
+         state.items.forEach((item) => {
+            totalQ += item.quantity;
+            totalA += item.price * item.quantity;
+         });
+
+         state.totalQuantity = totalQ;
+         state.totalAmount = totalA;
+
+         console.log("🟢 addItem →", { added: product, updatedCart: state.items });
       },
 
       decrementItem: (state, action) => {
-         const item = state.items.find((i) => i.id === action.payload);
-         if (item) {
-            item.quantity -= 1;
-            if (item.quantity <= 0) {
-               state.items = state.items.filter((i) => i.id !== action.payload);
+         const id = action.payload;
+         const existing = state.items.find((item) => item.id === id);
+
+         if (existing) {
+            existing.quantity -= 1;
+            if (existing.quantity <= 0) {
+               state.items = state.items.filter((i) => i.id !== id);
             }
          }
 
-         state.totalQuantity = state.items.reduce((acc, item) => acc + item.quantity, 0);
-         state.totalAmount = state.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+         // Recalculate totals
+         let totalQ = 0;
+         let totalA = 0;
+         state.items.forEach((item) => {
+            totalQ += item.quantity;
+            totalA += item.price * item.quantity;
+         });
+
+         state.totalQuantity = totalQ;
+         state.totalAmount = totalA;
+
+         console.log("🟡 decrementItem →", id);
       },
 
       removeItem: (state, action) => {
-         state.items = state.items.filter((item) => item.id !== action.payload);
+         const id = action.payload;
+         state.items = state.items.filter((item) => item.id !== id);
 
-         state.totalQuantity = state.items.reduce((acc, item) => acc + item.quantity, 0);
-         state.totalAmount = state.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+         // Recalculate totals
+         let totalQ = 0;
+         let totalA = 0;
+         state.items.forEach((item) => {
+            totalQ += item.quantity;
+            totalA += item.price * item.quantity;
+         });
+
+         state.totalQuantity = totalQ;
+         state.totalAmount = totalA;
+
+         console.log("🔴 removeItem →", id);
       },
 
       clearCart: (state) => {
          state.items = [];
          state.totalQuantity = 0;
          state.totalAmount = 0;
+         console.log("⚪ clearCart → Cart emptied");
       },
    },
 });
 
 export const { addItem, decrementItem, removeItem, clearCart } = cartSlice.actions;
-
 export default cartSlice.reducer;
