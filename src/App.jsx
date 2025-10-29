@@ -3,7 +3,7 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./pages/home/Home";
 import Footer from "./components/layout/Footer";
 import Cart from "./components/Product/Cart";
-import ProductDescription from "./pages/description/ProductDescription"; // ✅ New import
+import ProductDescription from "../src/pages/description/ProductDescription"; 
 
 function App() {
   return (
