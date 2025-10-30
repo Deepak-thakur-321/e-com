@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem } from "../../app/features/cart/cartSlice";
+import { addToCart } from "../../app/features/cart/cartSlice";
 
 export default function ProductDetails() {
    const { id } = useParams();
@@ -53,7 +53,7 @@ export default function ProductDetails() {
 
                <div className="flex items-center space-x-4">
                   <button
-                     onClick={() => dispatch(addItem(product))}
+                     onClick={() => dispatch(addToCart(product))}
                      className="px-6 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition"
                   >
                      Add to Cart

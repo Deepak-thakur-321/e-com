@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaUser, FaSearch, FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux"; // ✅ import this
-
+ import {NavLink} from "react-router-dom";
 export default function Navbar() {
    const [isSearchFocused, setIsSearchFocused] = useState(false);
    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
@@ -43,9 +43,12 @@ export default function Navbar() {
             <div className="flex items-center justify-between h-16">
                {/* Logo */}
                <div className="flex items-center space-x-8">
-                  <div className="text-2xl font-bold tracking-tight text-gray-900 cursor-pointer">
-                     MyStore
-                  </div>
+                  <NavLink to="/">
+                     <div className="text-2xl font-bold tracking-tight text-gray-900 cursor-pointer">
+                        MyStore
+                     </div>
+                  </NavLink>
+
 
                   {/* Categories Dropdown */}
                   <div className="relative hidden lg:block">

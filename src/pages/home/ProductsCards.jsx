@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem } from "../../app/features/cart/cartSlice";
-import { useNavigate } from "react-router-dom"; // ✅ use react-router-dom, not react-router
+import { addToCart } from "../../app/features/cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const ProductsCards = () => {
    const [favorites, setFavorites] = useState([]);
@@ -28,9 +28,10 @@ const ProductsCards = () => {
          console.error("❌ Product missing ID:", product);
          return;
       }
-      dispatch(addItem({ ...product, quantity: 1 }));
-      console.log("✅ Dispatched addItem:", product);
+      dispatch(addToCart({ ...product, quantity: 1 }));
+      console.log("✅ Added to Cart:", product);
    };
+
 
    return (
       <section className="bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-100 lg:mt-10">
@@ -84,8 +85,8 @@ const ProductsCards = () => {
                         >
                            <Heart
                               className={`w-5 h-5 ${favorites.includes(product.id)
-                                    ? "fill-red-500 text-red-500"
-                                    : "text-slate-400"
+                                 ? "fill-red-500 text-red-500"
+                                 : "text-slate-400"
                                  }`}
                            />
                         </button>
@@ -103,8 +104,8 @@ const ProductsCards = () => {
                                  <Star
                                     key={i}
                                     className={`w-4 h-4 ${i < Math.floor(product.rating)
-                                          ? "fill-yellow-400 text-yellow-400"
-                                          : "text-slate-300"
+                                       ? "fill-yellow-400 text-yellow-400"
+                                       : "text-slate-300"
                                        }`}
                                  />
                               ))}
