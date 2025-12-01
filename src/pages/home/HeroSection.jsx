@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
+import BestSeller from '../bestseller/BestSeller';
+
 
 const heroImages = [
    "https://i.pinimg.com/736x/e3/5f/2d/e35f2d8255c2733a2d4bc4ca26f03e68.jpg",
@@ -9,6 +12,8 @@ const heroImages = [
 
 export default function PremiumHero() {
    const [currentSlide, setCurrentSlide] = useState(0);
+
+   const navigate = useNavigate();
 
    // Carousel auto-slide
    useEffect(() => {
@@ -66,10 +71,14 @@ export default function PremiumHero() {
                            </p>
 
                            <div className="flex flex-wrap gap-4 pt-1 animate-fadeIn delay-300">
-                              <button className="group bg-gray-900 text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg hover:scale-[1.03]">
+                              <button
+                                 onClick={() => navigate("/best-sellers")}
+                                 className="group bg-gray-900 text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg hover:scale-[1.03]"
+                              >
                                  Shop Now
                                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                               </button>
+
                               <button className="bg-white/80 backdrop-blur-sm border border-gray-300 text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-white transition-all">
                                  View Collection
                               </button>

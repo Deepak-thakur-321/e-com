@@ -4,6 +4,7 @@ import Category from './Category'
 import ShopBetter from './ShopBetter';
 import SpecialDay from './SpecialDay';
 import ProductsCard from './ProductsCards';
+
 const Home = () => {
   return (
     <div>
