@@ -79,7 +79,12 @@ export default function PremiumHero() {
                                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                               </button>
 
-                              <button className="bg-white/80 backdrop-blur-sm border border-gray-300 text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-white transition-all">
+                              <button
+                                 className="bg-white/80 backdrop-blur-sm border border-gray-300 
+                                  text-gray-900 px-7 py-3 rounded-full font-semibold 
+                                  hover:bg-white transition-all"
+                                 onClick={() => navigate("/view-collection")}
+                              >
                                  View Collection
                               </button>
                            </div>
@@ -158,7 +163,7 @@ export default function PremiumHero() {
                            </p>
                         </div>
 
-                        <button className="group w-full bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:scale-[1.03]">
+                        <button onClick={() => navigate("/view-collection")} className="group w-full bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:scale-[1.03]">
                            Explore Collection
                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>

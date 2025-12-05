@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaUser, FaSearch, FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux"; // ✅ import this
- import {NavLink} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 export default function Navbar() {
    const [isSearchFocused, setIsSearchFocused] = useState(false);
    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
+    const navigate = useNavigate();
 
    // ✅ use Redux selector to get totalQuantity
    const cartCount = useSelector((state) => state.cart.totalQuantity); // <-- this line replaces const cartCount = 3;
@@ -92,11 +94,12 @@ export default function Navbar() {
                         New Arrivals
                      </a>
                      <a
-                        href="/shop"
-                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+                        onClick={() => navigate("/best-sellers")}
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition cursor-pointer"
                      >
                         Best Sellers
                      </a>
+
                      <a
                         href="/showcase"
                         className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"

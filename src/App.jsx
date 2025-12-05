@@ -7,6 +7,7 @@ import Footer from "./components/layout/Footer";
 import CartPage from "../src/components/products/CartPage";
 import ProductDescription from "./pages/description/ProductDescription";
 import BestSeller from "./pages/bestseller/BestSeller";
+import ViewCollection from "./pages/collection/ViewCollection.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/best-sellers" element={<BestSeller />} />
+            <Route path="/view-collection" element={<ViewCollection />} />
 
 
             {/* Placeholder until ProductDescription page is built */}

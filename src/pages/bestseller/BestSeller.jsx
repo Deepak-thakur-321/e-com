@@ -226,7 +226,7 @@ const BestSeller = () => {
                      <span>Top Rated by 50K+ Customers</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                     Best Sellers & <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Featured Products</span>
+                     <span className='text-white'>Best Sellers &</span> <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Featured Products</span>
                   </h1>
                   <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
                      Discover our most-loved products, handpicked for quality and customer satisfaction
