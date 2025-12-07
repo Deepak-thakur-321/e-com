@@ -1,4 +1,3 @@
-// src/app/features/products/productSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -13,6 +12,8 @@ const initialState = {
          badge: "New Arrival",
          rating: 4.7,
          reviews: 162,
+         soldCount: "5K+",
+          category: "fashion",
       },
       {
          id: 2,
@@ -24,6 +25,8 @@ const initialState = {
          badge: "Resort Edit",
          rating: 4.7,
          reviews: 198,
+         soldCount: "7K+",
+          category: "fashion",
       },
       {
          id: 3,
@@ -35,6 +38,8 @@ const initialState = {
          badge: "Minimalist Edit",
          rating: 4.6,
          reviews: 265,
+         soldCount: "4K+",
+          category: "lifestyle",
       },
       {
          id: 4,
@@ -46,6 +51,8 @@ const initialState = {
          badge: "Street Style",
          rating: 4.8,
          reviews: 421,
+         soldCount: "9K+",
+          category: "lifestyle",
       },
       {
          id: 5,
@@ -57,6 +64,8 @@ const initialState = {
          badge: "Signature Drop",
          rating: 4.7,
          reviews: 167,
+         soldCount: "6K+",
+          category: "fashion",
       },
       {
          id: 6,
@@ -68,6 +77,8 @@ const initialState = {
          badge: "Limited Drop",
          rating: 4.8,
          reviews: 246,
+         soldCount: "8K+",
+          category: "lifestyle",
       },
       {
          id: 7,
@@ -79,6 +90,8 @@ const initialState = {
          badge: "Editor’s Pick",
          rating: 4.6,
          reviews: 194,
+         soldCount: "5K+",
+          category: "fashion",
       },
       {
          id: 8,
@@ -90,6 +103,8 @@ const initialState = {
          badge: "Seasonal Favorite",
          rating: 4.9,
          reviews: 288,
+         soldCount: "11K+",
+          category: "lifestyle",
       },
       {
          id: 9,
@@ -101,6 +116,9 @@ const initialState = {
          badge: "Editor’s Pick",
          rating: 4.8,
          reviews: 288,
+         soldCount: "10K+",
+          category: "fashion",
+          
       },
       {
          id: 10,
@@ -112,6 +130,8 @@ const initialState = {
          badge: "Formal Exclusive",
          rating: 4.9,
          reviews: 312,
+         soldCount: "12K+",
+          category: "lifestyle",
       },
       {
          id: 11,
@@ -123,6 +143,8 @@ const initialState = {
          badge: "Winter Drop",
          rating: 4.8,
          reviews: 271,
+         soldCount: "9K+",
+          category: "fashion",
       },
       {
          id: 12,
@@ -134,7 +156,10 @@ const initialState = {
          badge: "Season Favorite",
          rating: 4.8,
          reviews: 198,
+         soldCount: "7K+",
+          category: "lifestyle",
       },
+
    ],
 };
 
