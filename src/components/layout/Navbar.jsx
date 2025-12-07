@@ -12,14 +12,8 @@ export default function Navbar() {
    const cartCount = useSelector((state) => state.cart.totalQuantity); // <-- this line replaces const cartCount = 3;
 
    const categories = [
-      "Electronics",
       "Fashion",
-      "Home & Living",
       "Beauty & Health",
-      "Sports & Outdoors",
-      "Books & Media",
-      "Toys & Games",
-      "Automotive",
    ];
 
    return (

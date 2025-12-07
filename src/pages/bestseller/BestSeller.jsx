@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../app/features/cart/cartSlice';
 import { Star, Heart, ShoppingCart, Filter, Grid, List, ArrowUpDown, ChevronDown, TrendingUp, Award, Zap } from 'lucide-react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router';
 
 const BestSeller = () => {
 
@@ -175,11 +176,14 @@ const BestSeller = () => {
                         style={{ animationDelay: `${index * 50}ms` }}
                      >
                         <div className="relative overflow-hidden aspect-square">
-                           <img
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                           />
+                           <Link to={`/product/${product.id}`}>
+                              <img
+                                 src={product.image}
+                                 alt={product.name}
+                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                              />
+                           </Link>
+
                            <div className="absolute top-3 left-3 right-3 flex items-start justify-between">
                               <span className={`${getBadgeStyles(product.badge)} px-3 py-1 rounded-full text-xs font-bold shadow-lg`}>
                                  {product.badge}
