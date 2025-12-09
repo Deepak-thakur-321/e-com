@@ -8,7 +8,7 @@ import CartPage from "../src/components/products/CartPage";
 import ProductDescription from "./pages/description/ProductDescription";
 import BestSeller from "./pages/bestseller/BestSeller";
 import ViewCollection from "./pages/collection/ViewCollection.jsx";
-
+import ProductDetailPage from "./pages/productDetail/ProductDetailPage.jsx";
 function App() {
   return (
     <Router>
@@ -25,7 +25,12 @@ function App() {
 
 
             {/* Placeholder until ProductDescription page is built */}
-            <Route path="/product/:id" element={<ProductDescription />} /> </Routes>
+            <Route path="/product/:id" element={<ProductDescription />} />
+            <Route path="/collection/product/:id" element={<ProductDetailPage />} />
+
+          </Routes>
+
+
         </main>
 
         <Footer />
