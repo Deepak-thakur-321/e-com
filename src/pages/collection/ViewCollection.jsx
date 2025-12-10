@@ -3,6 +3,7 @@ import { ChevronDown, X } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { selectCollectionProducts } from "../../app/features/products/collectionProductSlice";
+import Navbar from "../../components/layout/Navbar";
 
 const ViewCollection = () => {
    const navigate = useNavigate();
@@ -40,38 +41,9 @@ const ViewCollection = () => {
 
    return (
       <div className="fixed inset-0 bg-stone-50 z-[500] flex flex-col">
-
          {/* HEADER */}
-         <div
-            className={`sticky top-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-10 py-3 sm:py-4 border-b ${scrolled
-                  ? "bg-white/90 backdrop-blur-xl shadow-md"
-                  : "bg-gradient-to-b from-white/50 to-transparent backdrop-blur-sm"
-               }`}
-            style={{ animation: "fadeIn 0.5s ease-out" }}
-         >
-            <div className="flex items-center justify-between max-w-7xl mx-auto">
-               {/* Premium Title */}
-               <div className="flex flex-col">
-                  <h1 className="text-lg sm:text-2xl md:text-3xl font-light tracking-[0.15em] sm:tracking-[0.20em] text-[rgb(16,24,40)]">
-                     NEW SEASON
-                  </h1>
-                  <p className="text-xs sm:text-sm tracking-wide text-black -mt-0.5 sm:-mt-1">
-                     Exclusive Fashion Edit
-                  </p>
-               </div>
-
-               {/* Close Button */}
-               <button
-                  onClick={() => window.history.back()}
-                  className="p-2 rounded-full border border-neutral-200 hover:border-neutral-400 
-              transition-all duration-300 hover:shadow-md hover:bg-white/60 backdrop-blur-xl
-              hover:scale-110 active:scale-95"
-               >
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-700" />
-               </button>
-            </div>
-         </div>
-
+         <Navbar></Navbar>
+         
          {/* SCROLL AREA */}
          <div id="collection-scroll" className="flex-1 overflow-y-auto scroll-smooth">
 

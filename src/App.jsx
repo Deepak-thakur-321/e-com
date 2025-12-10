@@ -9,6 +9,7 @@ import ProductDescription from "./pages/description/ProductDescription";
 import BestSeller from "./pages/bestseller/BestSeller";
 import ViewCollection from "./pages/collection/ViewCollection.jsx";
 import ProductDetailPage from "./pages/productDetail/ProductDetailPage.jsx";
+import TShirtCollection from "./pages/categories/TShirtPage.jsx";
 function App() {
   return (
     <Router>
@@ -22,6 +23,8 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/best-sellers" element={<BestSeller />} />
             <Route path="/view-collection" element={<ViewCollection />} />
+
+            <Route path="/t-shirts" element={<TShirtCollection />} />
 
 
             {/* Placeholder until ProductDescription page is built */}

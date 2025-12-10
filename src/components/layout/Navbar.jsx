@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaUser, FaSearch, FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux"; // ✅ import this
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 export default function Navbar() {
    const [isSearchFocused, setIsSearchFocused] = useState(false);
    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
-    const navigate = useNavigate();
+   const navigate = useNavigate();
 
    // ✅ use Redux selector to get totalQuantity
    const cartCount = useSelector((state) => state.cart.totalQuantity); // <-- this line replaces const cartCount = 3;
@@ -81,26 +81,34 @@ export default function Navbar() {
 
                   {/* Nav Links */}
                   <div className="hidden lg:flex items-center space-x-8">
-                     <a
-                        href="/"
+                     <Link
+                        to="/"
                         className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
                      >
                         New Arrivals
-                     </a>
-                     <a
-                        onClick={() => navigate("/best-sellers")}
-                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition cursor-pointer"
+                     </Link>
+
+                     <Link
+                        to="/best-sellers"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
                      >
                         Best Sellers
-                     </a>
+                     </Link>
 
-                     <a
-                        href="/showcase"
+                     <Link
+                        to="/view-collection"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+                     >
+                        New Collection
+                     </Link>
+                     <Link
+                        to="/showcase"
                         className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
                      >
                         Sale
-                     </a>
+                     </Link>
                   </div>
+
                </div>
 
                {/* Search Bar */}
