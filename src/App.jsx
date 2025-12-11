@@ -24,7 +24,8 @@ function App() {
             <Route path="/best-sellers" element={<BestSeller />} />
             <Route path="/view-collection" element={<ViewCollection />} />
 
-            <Route path="/t-shirts" element={<TShirtCollection />} />
+            <Route path="/category/:slug" element={<TShirtCollection />} />
+
 
 
             {/* Placeholder until ProductDescription page is built */}

@@ -1,13 +1,44 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Heart, ChevronDown, SlidersHorizontal, X } from 'lucide-react';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function TShirtCollection() {
+
+   const slug = useParams()
+
+   const [currentSlide, setCurrentSlide] = useState(0);
+   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
    const [cart, setCart] = useState([]);
    const [filterOpen, setFilterOpen] = useState(false);
    const [selectedSize, setSelectedSize] = useState('all');
    const [selectedColor, setSelectedColor] = useState('all');
    const [sortBy, setSortBy] = useState('featured');
    const [wishlist, setWishlist] = useState([]);
+
+   const slides = [
+      {
+         image: "https://i.pinimg.com/1200x/0f/94/2c/0f942c91dfacf3d761158146a73d9ed5.jpg",
+         title: "SUSTAINABLE FABRICS",
+         subtitle: "Timeless comfort meets modern design",
+         cta: "DISCOVER COLLECTION"
+      },
+      {
+         image: "https://i.pinimg.com/1200x/97/18/89/971889993c6ef00cee2dc11e8ba0f428.jpg",
+         title: "PREMIUM ESSENTIALS",
+         subtitle: "Crafted with care for you and the planet",
+         cta: "SHOP SUSTAINABLE"
+      },
+      {
+         image: "https://i.pinimg.com/1200x/63/2d/24/632d2468cfd6497e75c3c6e82c77dc07.jpg",
+         title: "EVERYDAY LUXURY",
+         subtitle: "Elevated basics for every moment",
+         cta: "EXPLORE STYLES"
+      }
+   ];
+
 
    const products = [
       { id: 1, name: 'Essential Cotton Tee', price: 49, image: 'https://i.pinimg.com/1200x/03/7a/ea/037aea0187a20d0818d6320533355778.jpg', color: 'Olive', sizes: ['S', 'M', 'L', 'XL'], category: 'essentials' },
@@ -19,6 +50,32 @@ export default function TShirtCollection() {
       { id: 7, name: 'Graphic Print Tee', price: 72, image: 'https://i.pinimg.com/1200x/d1/ce/62/d1ce62523f2b1b6bd1e691d2b5b51947.jpg', color: 'Black', sizes: ['S', 'M', 'L', 'XL'], category: 'graphics' },
       { id: 8, name: 'Minimal Crew Tee', price: 58, image: 'https://i.pinimg.com/736x/03/5f/e3/035fe3006275340452f9891c81499ca0.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'minimal' },
    ];
+
+
+   useEffect(() => {
+      if (!isAutoPlaying) return;
+
+      const interval = setInterval(() => {
+         setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }, 5000);
+
+      return () => clearInterval(interval);
+   }, [isAutoPlaying, slides.length]);
+
+   const goToSlide = (index) => {
+      setCurrentSlide(index);
+      setIsAutoPlaying(false);
+   };
+
+   const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setIsAutoPlaying(false);
+   };
+
+   const prevSlide = () => {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      setIsAutoPlaying(false);
+   };
 
    const addToCart = (product) => {
       setCart([...cart, product]);
@@ -38,27 +95,74 @@ export default function TShirtCollection() {
 
    return (
       <div className="min-h-screen bg-white">
+
          {/* Hero Section */}
-         <div className="relative h-[70vh] bg-gradient-to-br from-gray-900 to-gray-700 overflow-hidden">
-            <div className="absolute inset-0"></div>
-            <img
-               src="https://i.pinimg.com/736x/a2/fd/92/a2fd928aedeae3310dfb4c53cd0d4c64.jpg"
-               alt="T-Shirt Collection"
-               className="absolute inset-0 w-full h-full object-cover opacity-70"
-            />
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
-               <p className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white">T-SHIRT COLLECTION</p>
-               <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl text-center">
-                  Timeless essentials crafted for everyday comfort and elevated style
-               </p>
-               <div className="flex gap-4">
-                  <button className="bg-white rounded-xl text-black px-8 py-3 font-semibold hover:bg-gray-100 transition">
-                     SHOP NOW
-                  </button>
-                  <button className="border-2 rounded-xl border-white text-white px-8 py-3 font-semibold hover:bg-white hover:text-black transition">
-                     EXPLORE
-                  </button>
+         <div className="relative h-[90vh] overflow-hidden group">
+            {/* Slides */}
+            {slides.map((slide, index) => (
+               <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                     }`}
+               >
+                  {/* Background Image */}
+                  <div className="absolute inset-0 bg-black">
+                     <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
+                     <div className="max-w-4xl text-center space-y-6 animate-fadeIn">
+                        <p className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+                           {slide.title}
+                        </p>
+                        <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto">
+                           {slide.subtitle}
+                        </p>
+                        <div className="pt-4">
+                           <button className="bg-white text-black px-10 py-4 font-semibold text-sm tracking-wider hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg">
+                              {slide.cta}
+                           </button>
+                        </div>
+                     </div>
+                  </div>
                </div>
+            ))}
+
+            {/* Navigation Arrows */}
+            <button
+               onClick={prevSlide}
+               className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+               aria-label="Previous slide"
+            >
+               <ChevronLeft size={24} />
+            </button>
+            <button
+               onClick={nextSlide}
+               className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+               aria-label="Next slide"
+            >
+               <ChevronRight size={24} />
+            </button>
+
+            {/* Dots Navigation */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+               {slides.map((_, index) => (
+                  <button
+                     key={index}
+                     onClick={() => goToSlide(index)}
+                     className={`transition-all duration-300 rounded-full ${index === currentSlide
+                        ? "bg-white w-10 h-2"
+                        : "bg-white/40 hover:bg-white/60 w-2 h-2"
+                        }`}
+                     aria-label={`Go to slide ${index + 1}`}
+                  />
+               ))}
             </div>
          </div>
 
