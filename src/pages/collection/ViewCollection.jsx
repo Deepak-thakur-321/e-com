@@ -43,7 +43,7 @@ const ViewCollection = () => {
       <div className="fixed inset-0 bg-stone-50 z-[500] flex flex-col">
          {/* HEADER */}
          <Navbar></Navbar>
-         
+
          {/* SCROLL AREA */}
          <div id="collection-scroll" className="flex-1 overflow-y-auto scroll-smooth">
 
@@ -51,7 +51,7 @@ const ViewCollection = () => {
             <div className="relative h-[50vh] md:h-[40vh] lg:h-[65vh] overflow-hidden">
                <img
                   src="https://i.pinimg.com/736x/eb/73/72/eb737206608334a01fc1ada75e0f03e0.jpg"
-                  className="absolute inset-0 w-full h-full object-cover object-top scale-110 animate-[scaleIn_1.2s_ease-out] sm:hidden"
+                  className="absolute inset-0 w-full h-full object-cover object-top scale-110 animate-[scaleIn_1.2s_ease-out_forwards]"
                   alt="Hero Mobile"
                />
                <img
@@ -61,10 +61,10 @@ const ViewCollection = () => {
                />
                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
                <div className="relative z-10 h-full flex flex-col justify-end px-4 sm:px-8 lg:px-16 pb-12 sm:pb-16 md:pb-24">
-                  <p className="text-stone-700 uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[10px] sm:text-xs mb-2 sm:mb-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+                  <p className="text-stone-700 uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[10px] sm:text-xs mb-2 sm:mb-4 animate-[fadeInUp_0.8s_ease-out_forwards]">
                      Fall / Winter 2024
                   </p>
-                  <h2 className="text-blue-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+                  <h2 className="text-blue-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]">
                      Timeless <br /> Elegance
                   </h2>
                   <p className="text-stone-200 max-w-xl mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg font-light animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
@@ -91,8 +91,9 @@ const ViewCollection = () => {
                                        : "bg-stone-100 text-stone-700 hover:bg-stone-200 hover:shadow-md"
                                     }`}
                                  style={{
-                                    animation: `slideIn 0.4s ease-out ${index * 0.05}s both`,
+                                    animation: `slideIn 0.5s ease-out ${index * 0.05}s forwards`
                                  }}
+
                               >
                                  {selectedCategory === cat.id && (
                                     <span className="absolute inset-0 rounded-full bg-blue-600/30 blur-lg opacity-40 animate-pulse"></span>
@@ -135,7 +136,10 @@ const ViewCollection = () => {
                         onClick={() => navigate(`/collection/product/${p.id}`)}
                         onMouseEnter={() => setHoveredProduct(p.id)}
                         onMouseLeave={() => setHoveredProduct(null)}
-                        style={{ animation: `fadeInUp 0.7s ease-out ${i * 0.08}s both` }}
+                        style={{
+                           animation: `fadeInUp 0.7s ease-out ${i * 0.08}s forwards`
+                        }}
+
                      >
                         <div className="relative p-3 sm:p-4">
                            <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-stone-100">

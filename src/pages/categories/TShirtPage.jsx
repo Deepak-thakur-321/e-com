@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Heart, SlidersHorizontal, X, ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { addToCart } from '../../app/features/cart/cartSlice';
+import { tShirtCategoryProducts } from '../../app/features/products/tShirtCategorySlice';
+
 
 export default function TShirtCollection() {
    const dispatch = useDispatch();
    const navigate = useNavigate();
+   const tProducts = useSelector(tShirtCategoryProducts)
    const cartItems = useSelector((state) => state.cart.items);
    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
@@ -42,18 +45,6 @@ export default function TShirtCollection() {
       }
    ];
 
-
-   const products = [
-      { id: 1, name: 'Essential Cotton Tee', price: 749, image: 'https://i.pinimg.com/1200x/03/7a/ea/037aea0187a20d0818d6320533355778.jpg', color: 'Olive', sizes: ['S', 'M', 'L', 'XL'], category: 'essentials' },
-      { id: 2, name: 'Vintage Wash Tee', price: 659, image: 'https://i.pinimg.com/736x/5a/c8/85/5ac885d681ed16a1f84db683722ddf21.jpg', color: 'Beige', sizes: ['M', 'L', 'XL', 'XXL'], category: 'vintage' },
-      { id: 3, name: 'Oversized Fit Tee', price: 879, image: 'https://i.pinimg.com/1200x/98/60/5e/98605e2e9c5e3a35d8f7871f75162af1.jpg', color: 'White', sizes: ['S', 'M', 'L', 'XL'], category: 'oversized' },
-      { id: 4, name: 'Premium Pocket Tee', price: 559, image: 'https://i.pinimg.com/1200x/cf/47/c8/cf47c89fe4846694322406a3e93e8048.jpg', color: 'Red', sizes: ['S', 'M', 'L'], category: 'premium' },
-      { id: 5, name: 'Relaxed Fit Tee', price: 979, image: 'https://i.pinimg.com/736x/9e/79/c7/9e79c7086cb7604c456c5322a6ec8c1e.jpg', color: 'Navy', sizes: ['M', 'L', 'XL', 'XXL'], category: 'essentials' },
-      { id: 6, name: 'Heritage Box Tee', price: 889, image: 'https://i.pinimg.com/1200x/94/53/b1/9453b1a807389cde21c5c0c6f3524dc7.jpg', color: 'Navy', sizes: ['S', 'M', 'L', 'XL'], category: 'heritage' },
-      { id: 7, name: 'Graphic Print Tee', price: 1079, image: 'https://i.pinimg.com/1200x/d1/ce/62/d1ce62523f2b1b6bd1e691d2b5b51947.jpg', color: 'Black', sizes: ['S', 'M', 'L', 'XL'], category: 'graphics' },
-      { id: 8, name: 'Minimal Crew Tee', price: 2229, image: 'https://i.pinimg.com/736x/03/5f/e3/035fe3006275340452f9891c81499ca0.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'minimal' },
-   ];
-
    const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
    const colors = [
       { name: 'Black', hex: '#000000' },
@@ -87,7 +78,6 @@ export default function TShirtCollection() {
    };
 
    const addToCartHandler = (product) => {
-      // Redux action dispatch
       dispatch(addToCart({
          id: product.id,
          name: product.name,
@@ -135,7 +125,7 @@ export default function TShirtCollection() {
       setPriceRange([0, 5000]);
    };
 
-   const filteredProducts = products.filter(p => {
+   const filteredProducts = tProducts.filter(p => {
       if (selectedColor.length > 0 && !selectedColor.includes(p.color)) return false;
       if (selectedSize.length > 0 && !p.sizes.some(s => selectedSize.includes(s))) return false;
       if (p.price < priceRange[0] || p.price > priceRange[1]) return false;
@@ -380,7 +370,7 @@ export default function TShirtCollection() {
                {/* Product Grid */}
                <div className="flex-1">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                     {sortedProducts.map(product => (
+                     {tProducts.map(product => (
                         <div key={product.id} className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-300">
                            <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 aspect-[3/4]">
                               {/* Badges Row */}
@@ -519,58 +509,6 @@ export default function TShirtCollection() {
                </div>
             </div>
          )}
-
-         <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateX(100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out;
-        }
-
-        .animate-slideIn {
-          animation: slideIn 0.3s ease-out;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #111827;
-          cursor: pointer;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        input[type="range"]::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #111827;
-          cursor: pointer;
-          border: none;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-      `}</style>
       </div>
    );
 }

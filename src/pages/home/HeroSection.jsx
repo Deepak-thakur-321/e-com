@@ -25,12 +25,12 @@ export default function PremiumHero() {
 
    return (
       <div className="bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-         <div className="px-6 py-10">
+         <div className="px-4 lg:px-6 py-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
                {/* Main Hero - Left Section */}
                <div className="lg:col-span-8">
-                  <div className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 rounded-3xl overflow-hidden h-full min-h-[400px] shadow-sm">
+                  <div className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 rounded-3xl overflow-hidden h-full min-h-[400px] shadow-md">
 
                      {/* Background Pattern */}
                      <div className="absolute inset-0 opacity-10">
@@ -137,7 +137,7 @@ export default function PremiumHero() {
                      {/* Image */}
                      <div className="relative h-64 lg:h-72 overflow-hidden group">
                         <img
-                           src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&h=600&fit=crop"
+                           src="https://i.pinimg.com/1200x/33/1e/b3/331eb3685c412c48d9886d46ade2a9e5.jpg"
                            alt="New Collection"
                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />

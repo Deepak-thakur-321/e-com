@@ -2,24 +2,53 @@ import React from "react";
 import { Link } from "react-router";
 
 const categories = [
-   { name: "T-Shirts", slug: "t-shirts", img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Jackets", img: "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Shirt", img: "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fFNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Jeans", img: "https://images.unsplash.com/photo-1582552938357-32b906df40cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEplYW5zfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Bag", img: "https://plus.unsplash.com/premium_photo-1678739395192-bfdd13322d34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFnfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Shoes", img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Watches", img: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0Y2hlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "Caps", img: "https://plus.unsplash.com/premium_photo-1677405099651-53669fdee9df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q2FwfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
-
-   { name: "All Categories", img: "https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045_640.png" },
+   {
+      name: "T-Shirts",
+      slug: "t-shirts",
+      img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Jackets",
+      slug: "jackets",
+      img: "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Shirts",
+      slug: "shirts",
+      img: "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Jeans",
+      slug: "jeans",
+      img: "https://images.unsplash.com/photo-1582552938357-32b906df40cb?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Bags",
+      slug: "bags",
+      img: "https://plus.unsplash.com/premium_photo-1678739395192-bfdd13322d34?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Shoes",
+      slug: "shoes",
+      img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Watches",
+      slug: "watches",
+      img: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "Caps",
+      slug: "caps",
+      img: "https://plus.unsplash.com/premium_photo-1677405099651-53669fdee9df?auto=format&fit=crop&q=60&w=600"
+   },
+   {
+      name: "All Categories",
+      slug: "all",
+      img: "https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045_640.png"
+   }
 ];
+
 
 const Category = () => {
    return (
