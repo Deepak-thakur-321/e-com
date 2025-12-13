@@ -67,9 +67,9 @@ const SpecialDay = () => {
                         className="w-full h-full object-top object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                      />
                      <img
-                        src="https://i.pinimg.com/1200x/4a/ab/11/4aab11308057a402695f7c7690d2839a.jpg"
+                        src="https://i.pinimg.com/736x/9b/16/96/9b1696f4524fa67e65bc12664b47864f.jpg"
                         alt="Collab 2"
-                        className="w-full h-full object-top object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-center object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                      />
                      <img
                         src="https://i.pinimg.com/1200x/65/44/45/654445101980ba00d6f10da7f7fc9ca8.jpg"
@@ -77,7 +77,7 @@ const SpecialDay = () => {
                         className="w-full h-full object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                      />
                      <img
-                        src="https://i.pinimg.com/736x/81/a5/0c/81a50c1cde3e9f57140c6195650155a6.jpg"
+                        src="https://i.pinimg.com/1200x/11/a1/2d/11a12d435f954835ae17d1a88032ece8.jpg"
                         alt="Collab 4"
                         className="w-full h-full object-top object-cover rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                      />
