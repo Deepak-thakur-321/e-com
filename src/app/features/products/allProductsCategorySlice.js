@@ -98,6 +98,22 @@ const initialState = {
 
       { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/474x/6e/b9/c7/6eb9c75267e22b74c54a7c7aaae578e1.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'shoes' },
 
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/ee/c1/00/eec100a81c32984ace73a7677227375c.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f0/50/11/f0501104abb954a42fd237d904e22d4e.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/7d/d6/0f/7dd60fb7b4c97ae1e1759fb4f7ab663f.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/0d/07/9f/0d079fc13bb82481dc75e9cd49ab5f22.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/a6/39/03/a6390367605098b6fbac9ecf811d41c6.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/d6/5d/f6/d65df649f97afd7607aa09a62dc5ef40.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f5/32/15/f532157746cb277d5c397c2e83884915.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/3e/07/69/3e07697c295a2c3eb29b719ed6dc7e00.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
 
 
 
