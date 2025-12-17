@@ -29,7 +29,7 @@ const ViewCollection = () => {
    const categories = [
       { id: "all", label: "All" },
       { id: "shirts", label: "Shirts" },
-      { id: "blazers", label: "Blazers" },
+      { id: "shoes", label: "Shoes" },
       { id: "jackets", label: "Jackets" },
       { id: "trousers", label: "Trousers" },
    ];
@@ -134,7 +134,6 @@ const ViewCollection = () => {
                         key={p.id}
                         className="group cursor-pointer"
                         onClick={() => navigate(`/collection/product/${p.id}`)}
-                        onMouseEnter={() => setHoveredProduct(p.id)}
                         onMouseLeave={() => setHoveredProduct(null)}
                         style={{
                            animation: `fadeInUp 0.7s ease-out ${i * 0.08}s forwards`

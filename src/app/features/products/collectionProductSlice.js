@@ -10,7 +10,7 @@ const initialState = {
          discount: 30,
          category: "caps",
          tag: "New Arrival",
-         image:"https://i.pinimg.com/1200x/cc/a2/ec/cca2ece0d2002f73e8a37027d9e45d73.jpg",
+         image: "https://i.pinimg.com/1200x/cc/a2/ec/cca2ece0d2002f73e8a37027d9e45d73.jpg",
          images: [
             "https://i.pinimg.com/1200x/cc/a2/ec/cca2ece0d2002f73e8a37027d9e45d73.jpg",
             "https://i.pinimg.com/736x/34/c6/b0/34c6b0f6adff9b8b3ba0832c63cc1f19.jpg"
@@ -35,7 +35,7 @@ const initialState = {
          discount: 17,
          category: "hoodies",
          tag: "Limited",
-         image:"https://i.pinimg.com/736x/d6/9e/91/d69e919897a74e6ec1ca927ad3df5f81.jpg",
+         image: "https://i.pinimg.com/736x/d6/9e/91/d69e919897a74e6ec1ca927ad3df5f81.jpg",
          images: [
             "https://i.pinimg.com/736x/d6/9e/91/d69e919897a74e6ec1ca927ad3df5f81.jpg",
             "https://i.pinimg.com/1200x/96/83/79/968379f61ed0ed9eec4d286fdcdebda5.jpg"
@@ -60,19 +60,22 @@ const initialState = {
          discount: 20,
          category: "shirts",
          tag: "Bestseller",
-         image: "https://i.pinimg.com/736x/fb/be/4c/fbbe4cacd4132363597e01080ab105f1.jpg",
+         image: "https://i.pinimg.com/736x/4a/35/20/4a3520d4c40991cab3d14543be2c8f05.jpg",
          images: [
-            "https://i.pinimg.com/736x/fb/be/4c/fbbe4cacd4132363597e01080ab105f1.jpg",
-            "https://i.pinimg.com/736x/03/59/38/03593891395f8d516568f0721c07e30e.jpg"
+            "https://i.pinimg.com/736x/4a/35/20/4a3520d4c40991cab3d14543be2c8f05.jpg",
+            "https://i.pinimg.com/1200x/2f/db/b0/2fdbb070c58594f6afcdc1b160eb10df.jpg"
          ],
-         hoverImage: "https://i.pinimg.com/736x/03/59/38/03593891395f8d516568f0721c07e30e.jpg",
          description: "Classic Oxford shirt for formal and casual occasions.",
          features: ["Breathable fabric", "Slim fit", "Easy care"],
          specifications: { Material: "Cotton", Fit: "Slim" },
          sizes: ["S", "M", "L", "XL"],
          colors: [
             { name: "white", hex: "#FFFFFF" },
-            { name: "blue", hex: "#1E40AF" }
+            { name: "olive", hex: "#556B2F" }
+
+
+
+
          ],
          rating: 4.7,
          reviews: 200
@@ -85,12 +88,11 @@ const initialState = {
          discount: 19,
          category: "shoes",
          tag: "Luxury",
-         image:"https://i.pinimg.com/1200x/fc/e6/eb/fce6ebcf1e16f3934fd56a098a7840f4.jpg",
+         image: "https://i.pinimg.com/736x/21/07/1e/21071e51f3e74416cfbe18fa9283c2c3.jpg",
          images: [
-            "https://i.pinimg.com/1200x/fc/e6/eb/fce6ebcf1e16f3934fd56a098a7840f4.jpg",
-            "https://i.pinimg.com/736x/32/46/b0/3246b0b2cf2dfc6318186040d38ba78b.jpg"
+            "https://i.pinimg.com/736x/21/07/1e/21071e51f3e74416cfbe18fa9283c2c3.jpg",
+            "https://i.pinimg.com/736x/b9/04/e0/b904e0a9d99fb25c13e48a424130b61f.jpg"
          ],
-         hoverImage: "https://i.pinimg.com/736x/32/46/b0/3246b0b2cf2dfc6318186040d38ba78b.jpg",
          description: "Comfortable and stylish white shoes from Asian.",
          features: ["Durable sole", "Comfort fit", "Lightweight"],
          specifications: { Material: "Leather", Fit: "Regular" },
@@ -110,12 +112,11 @@ const initialState = {
          discount: 20,
          category: "trousers",
          tag: "Bestseller",
-         image:"https://i.pinimg.com/736x/3a/a2/7b/3aa27bf10e19660d8087a6b4bcdb3edf.jpg",
+         image: "https://i.pinimg.com/736x/6b/18/09/6b1809b55980111891b4452db778b423.jpg",
          images: [
-            "https://i.pinimg.com/736x/3a/a2/7b/3aa27bf10e19660d8087a6b4bcdb3edf.jpg",
-            "https://i.pinimg.com/1200x/6a/a0/e6/6aa0e6aecf26b293e71b7b83322ddfd4.jpg"
+            "https://i.pinimg.com/736x/6b/18/09/6b1809b55980111891b4452db778b423.jpg",
+            "https://i.pinimg.com/736x/51/59/3d/51593ddd0ae415c387644b0d71249e88.jpg"
          ],
-         hoverImage: "https://i.pinimg.com/1200x/6a/a0/e6/6aa0e6aecf26b293e71b7b83322ddfd4.jpg",
          description: "Tech-Flex track set for comfort and style.",
          features: ["Breathable fabric", "Stretchable", "Easy care"],
          specifications: { Material: "Polyester", Fit: "Regular" },
@@ -135,12 +136,12 @@ const initialState = {
          discount: 22,
          category: "t-shirt",
          tag: "Limited Edition",
-         image:"https://i.pinimg.com/1200x/7f/ea/1e/7fea1ed1a0f67d2dd00802755f827184.jpg",
+         image: "https://i.pinimg.com/736x/60/3c/f6/603cf6a9c02f3b45d9bc392baf87eb87.jpg",
          images: [
-            "https://i.pinimg.com/1200x/7f/ea/1e/7fea1ed1a0f67d2dd00802755f827184.jpg",
-            "https://i.pinimg.com/1200x/7f/ea/1e/7fea1ed1a0f67d2dd00802755f827184.jpg"
+            "https://i.pinimg.com/736x/60/3c/f6/603cf6a9c02f3b45d9bc392baf87eb87.jpg",
+            "https://i.pinimg.com/736x/78/24/96/78249624cef6d365b8bc6388bb6c274a.jpg"
          ],
-         hoverImage: "https://i.pinimg.com/1200x/7f/ea/1e/7fea1ed1a0f67d2dd00802755f827184.jpg",
+
          description: "Premium jersey t-shirt with a rich look.",
          features: ["Soft fabric", "Slim fit", "Durable stitching"],
          specifications: { Material: "Cotton", Fit: "Slim" },
@@ -160,12 +161,11 @@ const initialState = {
          discount: 18,
          category: "dresses",
          tag: "Bestseller",
-         image:"https://i.pinimg.com/1200x/f5/76/d5/f576d588ac2411b6d3f78c3ad6607c72.jpg",
+         image: "https://i.pinimg.com/1200x/07/f3/2f/07f32faf29cdc0192992ca7cd86b98aa.jpg",
          images: [
-            "https://i.pinimg.com/1200x/f5/76/d5/f576d588ac2411b6d3f78c3ad6607c72.jpg",
-            "https://i.pinimg.com/1200x/06/09/5c/06095c6a3f02363fd31cea266e203bd5.jpg"
+            "https://i.pinimg.com/1200x/07/f3/2f/07f32faf29cdc0192992ca7cd86b98aa.jpg",
+            "https://i.pinimg.com/736x/37/09/b0/3709b00d65990153dbbf0030f2b4d4d5.jpg"
          ],
-         hoverImage: "https://i.pinimg.com/1200x/06/09/5c/06095c6a3f02363fd31cea266e203bd5.jpg",
          description: "Durable and stylish one-piece workwear.",
          features: ["Comfort fit", "Durable material", "Easy to wear"],
          specifications: { Material: "Denim", Fit: "Regular" },
@@ -185,7 +185,7 @@ const initialState = {
          discount: 21,
          category: "jackets",
          tag: "Limited Edition",
-         image:"https://i.pinimg.com/736x/db/d3/00/dbd300aff5a04fdd2b9d48f643561be9.jpg",
+         image: "https://i.pinimg.com/736x/db/d3/00/dbd300aff5a04fdd2b9d48f643561be9.jpg",
          images: [
             "https://i.pinimg.com/736x/db/d3/00/dbd300aff5a04fdd2b9d48f643561be9.jpg",
             "https://i.pinimg.com/736x/0f/42/23/0f42232b6316088804a7dd51300b6ea6.jpg"
