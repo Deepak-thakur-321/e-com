@@ -98,21 +98,38 @@ const initialState = {
 
       { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/474x/6e/b9/c7/6eb9c75267e22b74c54a7c7aaae578e1.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'shoes' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/ee/c1/00/eec100a81c32984ace73a7677227375c.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 49, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/ee/c1/00/eec100a81c32984ace73a7677227375c.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f0/50/11/f0501104abb954a42fd237d904e22d4e.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 50, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f0/50/11/f0501104abb954a42fd237d904e22d4e.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/7d/d6/0f/7dd60fb7b4c97ae1e1759fb4f7ab663f.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 51, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/7d/d6/0f/7dd60fb7b4c97ae1e1759fb4f7ab663f.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/0d/07/9f/0d079fc13bb82481dc75e9cd49ab5f22.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 52, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/0d/07/9f/0d079fc13bb82481dc75e9cd49ab5f22.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/a6/39/03/a6390367605098b6fbac9ecf811d41c6.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 53, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/a6/39/03/a6390367605098b6fbac9ecf811d41c6.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/d6/5d/f6/d65df649f97afd7607aa09a62dc5ef40.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 54, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/d6/5d/f6/d65df649f97afd7607aa09a62dc5ef40.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f5/32/15/f532157746cb277d5c397c2e83884915.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 55, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/f5/32/15/f532157746cb277d5c397c2e83884915.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
 
-      { id: 48, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/3e/07/69/3e07697c295a2c3eb29b719ed6dc7e00.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+      { id: 56, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/3e/07/69/3e07697c295a2c3eb29b719ed6dc7e00.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'watches' },
+
+      { id: 56, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/a6/20/62/a62062b1e2da048a0007ea5baa8bf872.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 57, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/ca/88/8e/ca888eb066b9be9c15dcf91bd73c407d.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 58, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/da/5c/63/da5c63dac4247f774b6d65352cda748e.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 59, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/29/78/4b/29784be153a81dca7c99569bc7c44239.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 60, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/b3/09/dd/b309dd89ac745f2a7e7e33796181d220.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 61, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/c4/af/52/c4af5237d8c54fe14d0f78458e1f656d.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 62, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/1200x/2a/61/38/2a6138d9a02d76bf4364918e0b6546e8.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
+      { id: 63, name: 'White & Gold Minimal Duo Pack', price: 2229, image: 'https://i.pinimg.com/736x/7f/57/ba/7f57ba344963c64f7665f375ac98caf4.jpg', color: 'White', sizes: ['M', 'L', 'XL'], category: 'caps' },
+
 
 
 

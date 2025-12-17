@@ -5,7 +5,7 @@ const categories = [
    {
       name: "T-Shirts",
       slug: "t-shirts",
-      img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=60&w=600"
+      img: "https://i.pinimg.com/736x/f9/05/51/f90551cccf38faf68455cc54a49dd24d.jpg"
    },
    {
       name: "Jackets",
@@ -15,7 +15,7 @@ const categories = [
    {
       name: "Shirts",
       slug: "shirts",
-      img: "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?auto=format&fit=crop&q=60&w=600"
+      img: "https://i.pinimg.com/736x/60/21/f0/6021f0ea35722e7eea699fe765efe243.jpg"
    },
    {
       name: "Jeans",
@@ -53,7 +53,7 @@ const categories = [
 const Category = () => {
    return (
       <div className="max-w-9xl mx-auto px-6 mt-5">
-         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-8">
+         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 md:gap-8 gap-8">
             {categories.map((category, index) => (
                <Link to={`/category/${category.slug}`} key={index}>
                   <div className="group flex flex-col items-center cursor-pointer">
