@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../app/features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 
+
 const ProductsCards = () => {
    const [favorites, setFavorites] = useState([]);
    const dispatch = useDispatch();
@@ -48,7 +49,7 @@ const ProductsCards = () => {
                </div>
 
                <div className="flex items-center gap-4 mt-6 md:mt-0">
-                  <button className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-md hover:bg-blue-800 hover:shadow-lg transition-all duration-300">
+                  <button onClick={() => navigate("/view-collection")} className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-md hover:bg-blue-800 hover:shadow-lg transition-all duration-300">
                      Explore the Collection
                   </button>
                   <button className="px-6 py-3 border border-blue-700 text-blue-700 font-semibold rounded-xl hover:bg-blue-50 hover:shadow-md transition-all duration-300">
