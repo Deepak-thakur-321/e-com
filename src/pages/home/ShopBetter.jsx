@@ -17,7 +17,7 @@ const products = [
       category: "WINTER COLLECTION",
       price: "₹2,499",
       rating: 4.8,
-      image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=650&fit=crop",
+      image: "https://i.pinimg.com/1200x/b0/53/01/b05301f3bfc07343f83b534ff43ff296.jpg",
    },
    {
       id: 2,
@@ -25,7 +25,7 @@ const products = [
       category: "SIGNATURE SERIES",
       price: "₹3,999",
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=650&fit=crop",
+      image: "https://i.pinimg.com/736x/d4/90/dd/d490dd9d04fee793e91ce978b0b4643b.jpg",
    },
    {
       id: 3,
@@ -33,7 +33,7 @@ const products = [
       category: "ESSENTIAL BASICS",
       price: "₹1,299",
       rating: 4.7,
-      image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&h=650&fit=crop",
+      image: "https://i.pinimg.com/736x/4b/9a/cc/4b9acc96d067310fc7fedb18655c6a20.jpg",
    },
    {
       id: 4,
@@ -41,7 +41,7 @@ const products = [
       category: "PREMIUM LINE",
       price: "₹8,999",
       rating: 5.0,
-      image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=500&h=650&fit=crop",
+      image: "https://i.pinimg.com/1200x/64/ff/78/64ff7874221678854a70a7945b20c500.jpg",
    },
    {
       id: 5,
@@ -49,7 +49,7 @@ const products = [
       category: "STREET STYLE",
       price: "₹4,499",
       rating: 4.6,
-      image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=650&fit=crop",
+      image: "https://i.pinimg.com/736x/87/f0/48/87f04892702ebe5beab73fcda1185fe4.jpg",
    },
 ];
 
