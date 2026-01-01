@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ShoppingBag, Star } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, ShoppingBag, Star } from 'lucide-react';
 
 /* ================= BRAND SYSTEM ================= */
 const BRAND = {
@@ -84,7 +84,7 @@ const ClothingCarousel = () => {
       if (diff === 0) {
          return {
             transform: "translateX(0%) scale(1.1)",
-            zIndex: 50,
+            zIndex: 20,
             opacity: 1,
             filter: "blur(0px)",
          };
@@ -138,42 +138,41 @@ const ClothingCarousel = () => {
       };
    };
 
-
    return (
       <div
-         className="min-h-screen flex items-center justify-center mt-10 overflow-hidden"
+         className="h-[90vh] lg:h-[130vh] flex items-center justify-center mt-10 lg:py-10  overflow-hidden"
          style={{ background: BRAND.bg }}
       >
-         <div className="relative w-full max-w-9xl px-6 mt-6">
+         <div className="relative w-full max-w-9xl px-4 sm:px-6">
             {/* ================= HEADER ================= */}
-            <div className="text-center mb-14">
-               <p className="text-6xl font-semibold tracking-tight text-white">
+            <div className="text-center mb-8 sm:mb-14">
+               <p className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white">
                   URBAN<span style={{ color: BRAND.accent }}>LUXE</span>
                </p>
-               <p className="mt-3 text-sm tracking-[0.3em] text-white/60">
+               <p className="mt-2 sm:mt-3 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-white/60">
                   PREMIUM STREETWEAR
                </p>
             </div>
 
             {/* ================= CAROUSEL ================= */}
-            <div className="relative h-[620px] flex items-center justify-center">
+            <div className="relative h-[500px] sm:h-[560px] lg:h-[620px] flex items-center justify-center">
                {products.map((p, i) => {
                   const active = i === currentIndex;
                   return (
                      <div
                         key={p.id}
-                        className="absolute w-80 h-[520px] transition-all duration-700 ease-out"
+                        className="absolute w-72 sm:w-80 h-[440px] sm:h-[480px] lg:h-[520px] transition-all duration-700 ease-out"
                         style={getStyle(i)}
                      >
                         <div
-                           className="relative w-full h-full rounded-3xl overflow-hidden"
+                           className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden"
                            style={{
                               background: BRAND.surface,
                               border: `1px solid ${BRAND.border}`,
                            }}
                         >
                            {/* Image */}
-                           <div className="relative h-[360px]">
+                           <div className="relative h-[300px] sm:h-[330px] lg:h-[360px]">
                               <img
                                  src={p.image}
                                  alt={p.name}
@@ -183,18 +182,18 @@ const ClothingCarousel = () => {
                            </div>
 
                            {/* Content */}
-                           <div className="p-6 text-white">
+                           <div className="p-4 sm:p-5 lg:p-6 text-white">
                               <span className="text-xs tracking-widest text-white/60">
                                  {p.category}
                               </span>
 
-                              <p className="text-2xl text-white font-semibold mt-2">
+                              <p className="text-xl sm:text-2xl text-white font-semibold mt-1 sm:mt-2">
                                  {p.name}
                               </p>
 
-                              <div className="flex items-center justify-between mt-4">
+                              <div className="flex items-center justify-between mt-3 sm:mt-4">
                                  <span
-                                    className="text-2xl font-semibold"
+                                    className="text-xl sm:text-2xl font-semibold"
                                     style={{ color: BRAND.accent }}
                                  >
                                     {p.price}
@@ -207,8 +206,8 @@ const ClothingCarousel = () => {
                               </div>
 
                               {active && (
-                                 <button className="mt-6 w-full py-3 rounded-xl bg-white text-black font-semibold hover:bg-neutral-200 transition flex items-center justify-center gap-2">
-                                    <ShoppingBag className="w-5 h-5" />
+                                 <button className="mt-4 sm:mt-6 w-full py-2.5 sm:py-3 rounded-xl bg-white text-black text-sm sm:text-base font-semibold hover:bg-neutral-200 transition flex items-center justify-center gap-2">
+                                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                                     Add to Cart
                                  </button>
                               )}
@@ -216,7 +215,7 @@ const ClothingCarousel = () => {
 
                            {/* Active ring */}
                            {active && (
-                              <div className="absolute inset-0 rounded-3xl ring-1 ring-white/30 pointer-events-none" />
+                              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl ring-1 ring-white/30 pointer-events-none" />
                            )}
                         </div>
                      </div>
@@ -226,17 +225,38 @@ const ClothingCarousel = () => {
                {/* Controls */}
                <button
                   onClick={prev}
-                  className="absolute left-0 z-40 w-14 h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition"
+                  className="absolute left-0 sm:left-4 z-[60] w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition"
                >
-                  <ChevronLeft />
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                </button>
 
                <button
                   onClick={next}
-                  className="absolute right-0 z-40 w-14 h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition"
+                  className="absolute right-0 sm:right-4 z-[60] w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition"
                >
-                  <ChevronRight />
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                </button>
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-8 sm:mt-10">
+               {products.map((_, index) => (
+                  <button
+                     key={index}
+                     onClick={() => {
+                        if (!isAnimating) {
+                           setIsAnimating(true);
+                           setCurrentIndex(index);
+                           setTimeout(() => setIsAnimating(false), 700);
+                        }
+                     }}
+                     className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                           ? 'w-8 sm:w-12 bg-white'
+                           : 'w-1.5 sm:w-2 bg-white/30 hover:bg-white/50'
+                        }`}
+                     style={index === currentIndex ? { backgroundColor: BRAND.accent } : {}}
+                  />
+               ))}
             </div>
          </div>
       </div>
