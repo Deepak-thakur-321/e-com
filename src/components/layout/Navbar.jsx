@@ -122,7 +122,7 @@ export default function Navbar() {
                      <Link to="/" className="text-sm text-gray-700 hover:text-black">New Arrivals</Link>
                      <Link to="/best-sellers" className="text-sm text-gray-700 hover:text-black">Best Sellers</Link>
                      <Link to="/view-collection" className="text-sm text-gray-700 hover:text-black">New Collection</Link>
-                     <Link to="/showcase" className="text-sm text-gray-700 hover:text-black">Sale</Link>
+                     <Link to="/sale" className="text-sm text-gray-700 hover:text-black">Sale</Link>
                   </div>
 
                   {/* Search */}
