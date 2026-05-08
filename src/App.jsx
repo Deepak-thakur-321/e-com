@@ -11,8 +11,8 @@ import ViewCollection from "./pages/collection/ViewCollection.jsx";
 import ProductDetailPage from "./pages/productDetail/ProductDetailPage.jsx";
 import TShirtCollection from "./pages/categories/TShirtPage.jsx";
 import LuxurySalePage from "./pages/sale/LuxurysalePage.jsx";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
+import Login from "../src/pages/auth/Login.jsx";
+import Register from "../src/pages/auth/Register.jsx";
 import { Navigate } from "react-router-dom";
 
 function App() {
