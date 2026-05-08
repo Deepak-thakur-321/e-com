@@ -1,56 +1,80 @@
-// src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
-import Home from "./pages/home/Home";
 import Footer from "./components/layout/Footer";
-import CartPage from "../src/components/products/CartPage";
+
+import Home from "./pages/home/Home";
+import CartPage from "./components/products/CartPage";
 import ProductDescription from "./pages/description/ProductDescription";
 import BestSeller from "./pages/bestseller/BestSeller";
-import ViewCollection from "./pages/collection/ViewCollection.jsx";
-import ProductDetailPage from "./pages/productDetail/ProductDetailPage.jsx";
-import TShirtCollection from "./pages/categories/TShirtPage.jsx";
-import LuxurySalePage from "./pages/sale/LuxurysalePage.jsx";
-import Login from "../src/pages/auth/Login.jsx";
-import Register from "../src/pages/auth/Register.jsx";
-import { Navigate } from "react-router-dom";
+import ViewCollection from "./pages/collection/ViewCollection";
+import ProductDetailPage from "./pages/productDetail/ProductDetailPage";
+import TShirtCollection from "./pages/categories/TShirtPage";
+import LuxurySalePage from "./pages/sale/LuxurysalePage";
+
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+
+function Layout() {
+  const location = useLocation();
+
+  const isAuthPage =
+    location.pathname === "/login" ||
+    location.pathname === "/register";
+
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+
+      {/* Hide Navbar on Auth Pages */}
+      {!isAuthPage && <Navbar />}
+
+      <main className="flex-1">
+        <Routes>
+
+          {/* Redirect Root */}
+          <Route path="/" element={<Navigate to="/login" replace />} />
+
+          {/* AUTH */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* MAIN */}
+          <Route path="/home" element={<Home />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/best-sellers" element={<BestSeller />} />
+          <Route path="/view-collection" element={<ViewCollection />} />
+          <Route path="/sale" element={<LuxurySalePage />} />
+
+          {/* CATEGORY */}
+          <Route path="/category/:slug" element={<TShirtCollection />} />
+
+          {/* PRODUCT */}
+          <Route path="/product/:id" element={<ProductDescription />} />
+          <Route
+            path="/collection/product/:id"
+            element={<ProductDetailPage />}
+          />
+
+        </Routes>
+      </main>
+
+      {/* Hide Footer on Auth Pages */}
+      {!isAuthPage && <Footer />}
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-gray-50">
-        <Navbar />
-
-        {/* Main Page Content */}
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/best-sellers" element={<BestSeller />} />
-            <Route path="/view-collection" element={<ViewCollection />} />
-            <Route path="/sale" element={<LuxurySalePage />} />
-
-
-            <Route path="/category/:slug" element={<TShirtCollection />} />
-
-
-
-            {/* Placeholder until ProductDescription page is built */}
-            <Route path="/product/:id" element={<ProductDescription />} />
-            <Route path="/collection/product/:id" element={<ProductDetailPage />} />
-
-
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-
-          </Routes>
-
-
-        </main>
-
-        <Footer />
-      </div>
+      <Layout />
     </Router>
   );
 }
