@@ -11,6 +11,9 @@ import ViewCollection from "./pages/collection/ViewCollection.jsx";
 import ProductDetailPage from "./pages/productDetail/ProductDetailPage.jsx";
 import TShirtCollection from "./pages/categories/TShirtPage.jsx";
 import LuxurySalePage from "./pages/sale/LuxurysalePage.jsx";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -21,7 +24,8 @@ function App() {
         {/* Main Page Content */}
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/best-sellers" element={<BestSeller />} />
             <Route path="/view-collection" element={<ViewCollection />} />
@@ -35,6 +39,10 @@ function App() {
             {/* Placeholder until ProductDescription page is built */}
             <Route path="/product/:id" element={<ProductDescription />} />
             <Route path="/collection/product/:id" element={<ProductDetailPage />} />
+
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
           </Routes>
 

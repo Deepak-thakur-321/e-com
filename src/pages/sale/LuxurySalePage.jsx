@@ -45,11 +45,11 @@ const LuxurySalePage = () => {
    const featuredStory = {
       title: 'The Art of Reduction',
       description: 'In celebration of our 10th anniversary, we present a curated selection of our most iconic pieces. Each item represents a decade of craftsmanship, innovation, and unwavering commitment to excellence.',
-      image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600'
+      image: 'https://i.pinimg.com/736x/39/a3/af/39a3af1ffdf527a5a0593af9f2c474c5.jpg'
    };
 
    return (
-      <div className="bg-zinc-950 text-white overflow-hidden">
+      <div className="bg-[rgb(21,29,44)]  text-white overflow-hidden">
          {/* Cursor Follower */}
          <div
             className="fixed w-6 h-6 border border-white/30 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-300"

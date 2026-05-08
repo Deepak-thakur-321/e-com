@@ -80,7 +80,7 @@ export default function Navbar() {
                   </div>
 
                   {/* Logo */}
-                  <NavLink to="/" className="text-2xl font-bold tracking-tight text-gray-900">
+                  <NavLink to="/home" className="text-2xl font-bold tracking-tight text-gray-900">
                      MyStore
                   </NavLink>
 
@@ -266,7 +266,7 @@ export default function Navbar() {
                         <Link to="/view-collection" onClick={() => setMobileOpen(false)} className="block text-sm font-light tracking-wide text-gray-800">
                            New Collection
                         </Link>
-                        <Link to="/showcase" onClick={() => setMobileOpen(false)} className="block text-sm font-light tracking-wide text-gray-800">
+                        <Link to="/sale" onClick={() => setMobileOpen(false)} className="block text-sm font-light tracking-wide text-gray-800">
                            Sale
                         </Link>
                      </div>
