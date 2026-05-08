@@ -17,7 +17,7 @@ import BestSeller from "./pages/bestseller/BestSeller";
 import ViewCollection from "./pages/collection/ViewCollection";
 import ProductDetailPage from "./pages/productDetail/ProductDetailPage";
 import TShirtCollection from "./pages/categories/TShirtPage";
-import LuxurySalePage from "./pages/sale/LuxurysalePage";
+import LuxurySalePage from "../src/pages/sale/LuxurySalePage";
 
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
