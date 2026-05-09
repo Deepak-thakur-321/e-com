@@ -28,10 +28,9 @@ const CartPage = () => {
    };
 
    const handleCheckout = () => {
-      alert("Checkout Successful!");
-      dispatch(clearCart());
-      navigate("/");
+      navigate("/payment");
    };
+
 
    const savings = (totalPrice * 0.1).toFixed(2);
    const estimatedTax = (totalPrice * 0.08).toFixed(2);

@@ -119,7 +119,7 @@ export default function Navbar() {
                      </div>
 
                      {/* Other Links */}
-                     <Link to="/" className="text-sm text-gray-700 hover:text-black">New Arrivals</Link>
+                     <Link to="/home" className="text-sm text-gray-700 hover:text-black">New Arrivals</Link>
                      <Link to="/best-sellers" className="text-sm text-gray-700 hover:text-black">Best Sellers</Link>
                      <Link to="/view-collection" className="text-sm text-gray-700 hover:text-black">New Collection</Link>
                      <Link to="/sale" className="text-sm text-gray-700 hover:text-black">Sale</Link>

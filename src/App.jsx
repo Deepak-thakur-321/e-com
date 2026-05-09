@@ -22,6 +22,9 @@ import LuxurySalePage from "../src/pages/sale/LuxurySalePage";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
+import PaymentGateway from "../src/pages/checkout/PaymentGateway";
+import ThankYou from '../src/pages/checkout/ThankYou';
+
 function Layout() {
   const location = useLocation();
 
@@ -38,24 +41,28 @@ function Layout() {
       <main className="flex-1">
         <Routes>
 
-          {/* Redirect Root */}
+          {/* Redirect Root Route */}
           <Route path="/" element={<Navigate to="/login" replace />} />
 
-          {/* AUTH */}
+          {/* AUTH Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* MAIN */}
+          {/* MAIN Pages Routes */}
           <Route path="/home" element={<Home />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/best-sellers" element={<BestSeller />} />
           <Route path="/view-collection" element={<ViewCollection />} />
           <Route path="/sale" element={<LuxurySalePage />} />
 
-          {/* CATEGORY */}
+          {/* Payments Routes */}
+          <Route path="/payment" element={<PaymentGateway />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+
+          {/* CATEGORY Route */}
           <Route path="/category/:slug" element={<TShirtCollection />} />
 
-          {/* PRODUCT */}
+          {/* PRODUCT Page Route */}
           <Route path="/product/:id" element={<ProductDescription />} />
           <Route
             path="/collection/product/:id"
