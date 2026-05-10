@@ -46,7 +46,7 @@ export default function Navbar() {
    };
 
 
-   const categories = ["TShirts", "Shirts"];
+   const categories = ["TShirts", "Shirts", "Jackets", "Jeans", "Bags", "Shoes", "Watches", "Caps",];
 
    const slugify = (text) => text.toLowerCase().replace(/\s+/g, "-");
 
@@ -87,39 +87,47 @@ export default function Navbar() {
                   {/* Desktop Navigation */}
                   <div className="hidden lg:flex items-center space-x-6">
                      {/* Categories Dropdown */}
-                     <div className="relative">
+                     <div
+                        className="relative"
+                        onMouseEnter={() => setIsCategoryOpen(true)}
+                        onMouseLeave={() => setIsCategoryOpen(false)}
+                     >
                         <button
-                           onMouseEnter={() => setIsCategoryOpen(true)}
-                           onMouseLeave={() => setIsCategoryOpen(false)}
                            className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-black transition"
                         >
                            Categories
+
                            <FaChevronDown
-                              className={`w-3 h-3 transition-transform duration-400 ${isCategoryOpen ? "rotate-180" : ""}`}
+                              className={`w-3 h-3 transition-transform duration-300 ${isCategoryOpen ? "rotate-180" : ""
+                                 }`}
                            />
                         </button>
 
-                        {isCategoryOpen && (
-                           <div
-                              onMouseEnter={() => setIsCategoryOpen(true)}
-                              onMouseLeave={() => setIsCategoryOpen(false)}
-                              className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-100 scale-100 transition-all"
-                           >
-                              {categories.map((cat) => (
-                                 <Link
-                                    key={cat}
-                                    to={`/category/${slugify(cat)}`}
-                                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-black"
-                                 >
-                                    {cat}
-                                 </Link>
-                              ))}
-                           </div>
-                        )}
+                        <div
+                           className={`
+      absolute top-full left-0
+      w-56 bg-white shadow-xl border border-gray-100
+      rounded-xl py-2 z-50
+      transition-all duration-300 origin-top
+      ${isCategoryOpen
+                                 ? "opacity-100 visible translate-y-2"
+                                 : "opacity-0 invisible translate-y-0"
+                              }
+    `}
+                        >
+                           {categories.map((cat) => (
+                              <Link
+                                 key={cat}
+                                 to={`/category/${slugify(cat)}`}
+                                 className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition"
+                              >
+                                 {cat}
+                              </Link>
+                           ))}
+                        </div>
                      </div>
 
                      {/* Other Links */}
-                     <Link to="/home" className="text-sm text-gray-700 hover:text-black">New Arrivals</Link>
                      <Link to="/best-sellers" className="text-sm text-gray-700 hover:text-black">Best Sellers</Link>
                      <Link to="/view-collection" className="text-sm text-gray-700 hover:text-black">New Collection</Link>
                      <Link to="/sale" className="text-sm text-gray-700 hover:text-black">Sale</Link>
