@@ -98,7 +98,7 @@ const ViewCollection = () => {
                   background: "linear-gradient(90deg, #f59e0b, #f97316)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                }}>
-                 Luxury Redefined
+                  Luxury Redefined
                </span>
             </h1>
 
@@ -204,11 +204,14 @@ const ViewCollection = () => {
 
             {/* GRID */}
             {viewMode === "grid" && (
-               <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(4, 1fr)",
-                  gap: 20,
-               }}>
+               <div
+                  style={{
+                     display: "grid",
+                     gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                     gap: 20,
+                     alignItems: "stretch",
+                  }}
+               >
                   {filtered.map((p, i) => {
                      const img = hovered === p.id
                         ? (Array.isArray(p.hoverImage) ? p.hoverImage[0] : p.hoverImage) || (Array.isArray(p.image) ? p.image[0] : p.image)
