@@ -44,12 +44,12 @@ const ProductsCards = () => {
                      Collaborative Creations
                   </span>
                   <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                     Where Brands & <span className="text-blue-600">Artistry Unite</span>
+                     Where Brands & <span className="text-blue-950">Artistry Unite</span>
                   </h2>
                </div>
 
                <div className="flex items-center gap-4 mt-6 md:mt-0">
-                  <button onClick={() => navigate("/view-collection")} className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-md hover:bg-blue-800 hover:shadow-lg transition-all duration-300">
+                  <button onClick={() => navigate("/view-collection")} className="px-6 py-3 bg-blue-950 text-white font-semibold rounded-xl shadow-md hover:bg-blue-950 hover:shadow-lg transition-all duration-300">
                      Explore the Collection
                   </button>
                   <button className="px-6 py-3 border border-blue-700 text-blue-700 font-semibold rounded-xl hover:bg-blue-50 hover:shadow-md transition-all duration-300">
@@ -148,7 +148,7 @@ const ProductsCards = () => {
                               e.stopPropagation(); // ✅ prevents navigation
                               handleAddToCart(product);
                            }}
-                           className="mt-2 w-full bg-blue-600 text-white font-semibold py-2 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
+                           className="mt-2 w-full bg-blue-950 text-white font-semibold py-2 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
                         >
                            <ShoppingBag className="w-5 h-5" />
                            Add to Cart

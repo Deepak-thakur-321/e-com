@@ -14,7 +14,7 @@ const SpecialDay = () => {
                   </span>
 
                   <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 leading-tight">
-                     A Gallery of <span className="text-blue-600">Modern Aesthetics</span>
+                     A Gallery of <span className="text-blue-950">Modern Aesthetics</span>
                   </h1>
 
                   <p className="lg:hidden md:hidden block text-base md:text-lg text-slate-600 leading-relaxed mb-0 md:mb-0 lg:max-w-xl">

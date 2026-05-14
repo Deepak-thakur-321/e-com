@@ -25,6 +25,9 @@ import Register from "./pages/auth/Register";
 import PaymentGateway from "../src/pages/checkout/PaymentGateway";
 import ThankYou from '../src/pages/checkout/ThankYou';
 
+import Wishlist from "../src/pages/wishlist/Wishlist";
+import Profile from "../src/pages/profile/Profile";
+
 function Layout() {
   const location = useLocation();
 
@@ -68,6 +71,14 @@ function Layout() {
             path="/collection/product/:id"
             element={<ProductDetailPage />}
           />
+
+          {/* Wishlist Route */}
+
+          <Route path="/wishlist" element={<Wishlist />} />
+
+          {/* Profile Route */}
+
+          <Route path="/profile" element={<Profile />} />
 
         </Routes>
       </main>
