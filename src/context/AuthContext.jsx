@@ -1,40 +1,61 @@
-// src/context/AuthContext.jsx
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
-export function AuthProvider({ children }) {
-   const [user, setUser] = useState(
-      () => JSON.parse(localStorage.getItem("fakeUser")) || null
-   );
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(() => {
+    // Persist across page refreshes
+    try {
+      const saved = localStorage.getItem("velor_user");
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
 
-   const login = (email, password) => {
-      // Fake validation - koi bhi email/password kaam karega
-      const fakeUser = { email, name: email.split("@")[0] };
-      localStorage.setItem("fakeUser", JSON.stringify(fakeUser));
-      setUser(fakeUser);
-      return true;
-   };
+  const login = (email, password) => {
+    // ── In production: call your API here and get back user object ──
+    // For now, store minimal identity (name won't be known on login unless fetched)
+    const userData = {
+      email,
+      name: email.split("@")[0].replace(/[^a-zA-Z\s]/g, " ").trim() || "Member",
+      createdAt: new Date().toISOString(),
+    };
+    setUser(userData);
+    localStorage.setItem("velor_user", JSON.stringify(userData));
+  };
 
-   const register = (name, email, password) => {
-      const fakeUser = { email, name };
-      localStorage.setItem("fakeUser", JSON.stringify(fakeUser));
-      setUser(fakeUser);
-      return true;
-   };
+  const register = (name, email, password) => {
+    // ── In production: call your API, get token, store user ──
+    const userData = {
+      name,
+      email,
+      createdAt: new Date().toISOString(),
+    };
+    setUser(userData);
+    localStorage.setItem("velor_user", JSON.stringify(userData));
+  };
 
-   const logout = () => {
-      localStorage.removeItem("fakeUser");
-      setUser(null);
-   };
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("velor_user");
+  };
 
-   return (
-      <AuthContext.Provider value={{ user, login, register, logout }}>
-         {children}
-      </AuthContext.Provider>
-   );
-}
+  const updateUser = (updates) => {
+    const updated = { ...user, ...updates };
+    setUser(updated);
+    localStorage.setItem("velor_user", JSON.stringify(updated));
+  };
 
-export function useAuth() {
-   return useContext(AuthContext);
-}
+  return (
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be inside AuthProvider");
+  return ctx;
+};
