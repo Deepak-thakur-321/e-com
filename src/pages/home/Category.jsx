@@ -10,13 +10,13 @@ const categories = [
   { name: "Shoes",          slug: "shoes",    img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&q=60&w=600" },
   { name: "Watches",        slug: "watches",  img: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&q=60&w=600" },
   { name: "Caps",           slug: "caps",     img: "https://plus.unsplash.com/premium_photo-1677405099651-53669fdee9df?auto=format&fit=crop&q=60&w=600" },
-  { name: "All Categories", slug: "all",      img: "https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045_640.png" },
+  
 ];
 
 const Category = () => {
   return (
-    <div className="max-w-9xl mx-auto px-6 mt-5">
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-6">
+    <div className="max-w-9xl mx-auto px-6 mt-10 lg:mt-6 ">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-6">
         {categories.map((category, index) => (
           <Link to={`/category/${category.slug}`} key={index}>
             <div className="group flex flex-col items-center cursor-pointer">
