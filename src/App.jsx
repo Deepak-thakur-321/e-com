@@ -9,6 +9,8 @@ import {
 
 import PageLoader from "./components/layout/PageLoader";
 
+import ScrollToTop from "./components/layout/ScrollToTop";
+
 import Navbar   from "./components/layout/Navbar";
 import Footer   from "./components/layout/Footer";
 
@@ -34,6 +36,7 @@ function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "#06142B" }}>
+      <ScrollToTop />
       {!isAuthPage && <Navbar />}
       <main className="flex-1">
         <Routes>
