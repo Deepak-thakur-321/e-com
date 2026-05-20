@@ -54,12 +54,27 @@ const Wishlist = () => {
         .wl-count  { font-size:11px; letter-spacing:0.25em; color:rgba(255,255,255,0.4); }
 
         /* Grid */
-        .wl-grid {
-          display:grid;
-          grid-template-columns:repeat(4, 1fr);
-          gap:0;
-          border-top:1px solid rgba(255,255,255,0.06);
-        }
+        .wl-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px; /* spacing */
+    padding:16px;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width:768px){
+    .wl-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+}
+
+@media (max-width:480px){
+    .wl-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+}
 
         /* Card */
         .wl-card {
@@ -155,7 +170,7 @@ const Wishlist = () => {
         </div>
 
         {/* Grid */}
-        <div className="wl-grid">
+        <div className="wl-grid pt-5">
           {wishlistItems.map((product) => {
             const img = Array.isArray(product.image) ? product.image[0] : product.image;
             const moved = movedIds.includes(product.id);
