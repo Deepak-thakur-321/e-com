@@ -36,7 +36,7 @@ const ProductsCards = () => {
 
    return (
       <section className="bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-100 lg:mt-10">
-         <div className="max-w-9xl mx-auto px-6">
+         <div className="max-w-9xl mx-auto px-6 py-10">
             {/* Header */}
             <div className="flex flex-col md:flex-row items-center justify-between mb-12">
                <div className="max-w-2xl">

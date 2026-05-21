@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, ShoppingBag, Heart, ChevronRight } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const SpecialDay = () => {
    return (
@@ -26,12 +27,13 @@ const SpecialDay = () => {
 
                {/* Right CTA Buttons */}
                <div className="flex sm:flex-row items-center gap-4 shrink-0">
-                  <button className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-all duration-300">
+                  <Link
+                     to="/gallery"
+                     className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-all duration-300 inline-block"
+                  >
                      Explore Gallery
-                  </button>
-                  <button className="px-6 py-3 border border-slate-900 text-slate-900 font-semibold rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300">
-                     Learn More
-                  </button>
+                  </Link>
+                  
                </div>
             </div>
 

@@ -11,26 +11,27 @@ import PageLoader from "./components/layout/PageLoader";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
-import Navbar   from "./components/layout/Navbar";
-import Footer   from "./components/layout/Footer";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
-import Home               from "./pages/home/Home";
-import CartPage           from "./components/products/CartPage";
+import Home from "./pages/home/Home";
+import CartPage from "./components/products/CartPage";
 import ProductDescription from "./pages/description/ProductDescription";
-import BestSeller         from "./pages/bestseller/BestSeller";
-import ViewCollection     from "./pages/collection/ViewCollection";
-import ProductDetailPage  from "./pages/productDetail/ProductDetailPage";
-import TShirtCollection   from "./pages/categories/TShirtPage";
-import LuxurySalePage     from "../src/pages/sale/LuxurySalePage";
-import Login              from "./pages/auth/Login";
-import Register           from "./pages/auth/Register";
-import PaymentGateway     from "../src/pages/checkout/PaymentGateway";
-import ThankYou           from "../src/pages/checkout/ThankYou";
-import Wishlist           from "../src/pages/wishlist/Wishlist";
-import Profile            from "../src/pages/profile/Profile";
+import BestSeller from "./pages/bestseller/BestSeller";
+import ViewCollection from "./pages/collection/ViewCollection";
+import ProductDetailPage from "./pages/productDetail/ProductDetailPage";
+import TShirtCollection from "./pages/categories/TShirtPage";
+import LuxurySalePage from "../src/pages/sale/LuxurySalePage";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import PaymentGateway from "../src/pages/checkout/PaymentGateway";
+import ThankYou from "../src/pages/checkout/ThankYou";
+import Wishlist from "../src/pages/wishlist/Wishlist";
+import Profile from "../src/pages/profile/Profile";
+import Gallery from "../src/pages/gallery/Gallery";
 
 function Layout() {
-  const location  = useLocation();
+  const location = useLocation();
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
 
@@ -41,33 +42,35 @@ function Layout() {
       <main className="flex-1">
         <Routes>
           {/* Default → Login */}
-          <Route path="/"                       element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
 
           {/* Auth */}
-          <Route path="/login"                  element={<Login />} />
-          <Route path="/register"               element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
           {/* Main */}
-          <Route path="/home"                   element={<Home />} />
-          <Route path="/cart"                   element={<CartPage />} />
-          <Route path="/best-sellers"           element={<BestSeller />} />
-          <Route path="/view-collection"        element={<ViewCollection />} />
-          <Route path="/sale"                   element={<LuxurySalePage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/best-sellers" element={<BestSeller />} />
+          <Route path="/view-collection" element={<ViewCollection />} />
+          <Route path="/sale" element={<LuxurySalePage />} />
+          <Route path="/gallery" element={<Gallery />} />
+
 
           {/* Checkout */}
-          <Route path="/payment"                element={<PaymentGateway />} />
-          <Route path="/thank-you"              element={<ThankYou />} />
+          <Route path="/payment" element={<PaymentGateway />} />
+          <Route path="/thank-you" element={<ThankYou />} />
 
           {/* Category */}
-          <Route path="/category/:slug"         element={<TShirtCollection />} />
+          <Route path="/category/:slug" element={<TShirtCollection />} />
 
           {/* Products */}
-          <Route path="/product/:id"            element={<ProductDescription />} />
+          <Route path="/product/:id" element={<ProductDescription />} />
           <Route path="/collection/product/:id" element={<ProductDetailPage />} />
 
           {/* Wishlist & Profile */}
-          <Route path="/wishlist"               element={<Wishlist />} />
-          <Route path="/profile"                element={<Profile />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
       {!isAuthPage && <Footer />}
@@ -95,7 +98,7 @@ function App() {
       */}
       <div style={{
         visibility: loaderDone ? "visible" : "hidden",
-        opacity:    loaderDone ? 1 : 0,
+        opacity: loaderDone ? 1 : 0,
         transition: "opacity 0.4s ease",
       }}>
         <Router>
