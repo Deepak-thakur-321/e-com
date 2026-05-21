@@ -21,6 +21,7 @@ const B = {
 
 const NAV_LINKS = [
    { label: "Best Sellers", to: "/best-sellers" },
+   { label: "Gallery", to: "/gallery" },          // added
    { label: "New Collection", to: "/view-collection" },
    { label: "Sale", to: "/sale", accent: true },
 ];

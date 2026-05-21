@@ -14,7 +14,7 @@ import { FaInstagram, FaTwitter, FaPinterestP, FaYoutube } from "react-icons/fa"
 import { Link } from "react-router-dom";
 
 const B = {
-  bg:          "#0A0A0A",
+  bg:          "#101828",
   bgElevated:  "#0F0F0F",
   border:      "rgba(255,255,255,0.07)",
   borderMid:   "rgba(255,255,255,0.12)",
@@ -123,7 +123,7 @@ export default function Footer() {
             <div>
               <span className="vf-brand-name" style={{
                 fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(52px, 7.5vw, 100px)", /* ← FIXED from .5vw */
+                fontSize: "clamp(52px, 7.5vw, 10px)", /* ← FIXED from .5vw */
                 fontWeight: 500, color: B.text,
                 letterSpacing: "-0.02em",
                 display: "block", lineHeight: 0.95,
@@ -267,17 +267,6 @@ export default function Footer() {
                   </button>
                 </div>
               )}
-
-              {/* Mini trust badges */}
-              <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 8 }}>
-                {[
-                  "🔒 Secure payments",
-                  "🚚 Free shipping on ₹2999+",
-                  "↩️ 15-day returns",
-                ].map((t) => (
-                  <p key={t} style={{ fontSize: 11, color: B.textDim, margin: 0, letterSpacing: "0.04em" }}>{t}</p>
-                ))}
-              </div>
             </div>
           </div>
         </div>
